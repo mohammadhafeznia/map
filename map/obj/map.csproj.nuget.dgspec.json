@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj": {}
+    "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj": {}
   },
   "projects": {
-    "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj": {
+    "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\my pc\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\obj\\",
+        "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\MEDIA MARK\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -66,21 +69,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj": {
+    "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj",
+        "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj",
         "projectName": "map",
-        "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj",
-        "packagesPath": "C:\\Users\\my pc\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\obj\\",
+        "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj",
+        "packagesPath": "C:\\Users\\MEDIA MARK\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -91,11 +97,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj"
+              "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj"
               },
-              "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj"
+              "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -148,21 +154,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj": {
+    "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj",
         "projectName": "ViewModel",
-        "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj",
-        "packagesPath": "C:\\Users\\my pc\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\obj\\",
+        "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj",
+        "packagesPath": "C:\\Users\\MEDIA MARK\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -173,8 +182,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj"
+              "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj"
               }
             }
           }
@@ -208,7 +217,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -381,8 +381,6 @@ c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Area
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Shared\Error.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Shared\_Layout.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelClient\TravelClient.cshtml.g.cs
-c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelClient\TravelDetails.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\_ViewImports.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\_ViewStart.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
@@ -412,3 +410,9 @@ c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\staticweba
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\map.dll
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\map.pdb
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\map.genruntimeconfig.cache
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Views\AboutUs\AboutUs.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Home\pay.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelDriver\TravelDetails.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelDriver\TravelDriver.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Home\DriverIncome.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelDriver\CurrentRequests.cshtml.g.cs
