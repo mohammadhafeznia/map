@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+  <meta name="description" content="تاکسی جو - اولین سامانه آنلاین تاکسی طراحی توسط تیم همپادکو">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#100DD1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- The above tags *must* come first in the head, any other head content must come *after* these tags-->
+  <!-- Title-->
+  <title>تاکسی جو</title>
+  <!-- Favicon-->
+  <link rel="icon" href="~/app/img/icons/icon-72x72.png">
+  <!-- Apple Touch Icon-->
+  <link rel="apple-touch-icon" href="~/app/img/icons/icon-96x96.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="~/app/img/icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="~/app/img/icons/icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="~/app/img/icons/icon-180x180.png">
+  <!-- Stylesheet-->
+  <link rel="stylesheet" href="~/app/style.css">
+  <!-- Web App Manifest-->
+  <link rel="manifest" href="~/app/manifest.json">
+   <link rel="manifest" href="~/app/najva-messaging-sw.js">
+      <!-- Najva Push Notification -->
+        <script type="text/javascript">
+            (function(){
+                var now = new Date();
+                var version = now.getFullYear().toString() + "0" + now.getMonth() + "0" + now.getDate() +
+                    "0" + now.getHours();
+                var head = document.getElementsByTagName("head")[0];
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = "https://app.najva.com/static/css/local-messaging.css" + "?v=" + version;
+                head.appendChild(link);
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.async = true;
+                script.src = "https://app.najva.com/static/js/scripts/hampadcoteam943-website-21748-69181c3c-fb63-41c8-9f34-1464f7a7de14.js" + "?v=" + version;
+                head.appendChild(script);
+                })()
+        </script>
+        <!-- END NAJVA PUSH NOTIFICATION -->
+      
+</head>
+
+<body>
+  <!-- Preloader-->
+  @* <div class="preloader" id="preloader">
+    <div class="spinner-grow text-secondary" role="status">
+      <div class="sr-only">بارگذاری...</div>
+    </div>
+  </div> *@
+  <!-- Header Area-->
+  <div class="header-area" id="headerArea">
+    <div class="container h-100 d-flex align-items-center justify-content-between">
+      <!-- Logo Wrapper-->
+      <div class="logo-wrapper"><a href="home.html"><img src="~/app/img/core-img/logo-small.png" alt=""></a></div>
+      <!-- Search Form-->
+      <div class="top-search-form">
+        <form action="#" method="">
+          <input class="form-control" type="search" placeholder="کلمه کلیدی خود را وارد کنید">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <!-- Navbar Toggler-->
+      <div class="suha-navbar-toggler d-flex flex-wrap" id="suhaNavbarToggler"><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <!-- Sidenav Black Overlay-->
+  <div class="sidenav-black-overlay"></div>
+  <!-- Side Nav Wrapper-->
+  <div class="suha-sidenav-wrapper" id="sidenavWrapper">
+    <!-- Sidenav Profile-->
+    <div class="sidenav-profile">
+      <div class="user-profile"><img src="~/app/img/bg-img/9.jpg" alt=""></div>
+      <div class="user-info">
+        <h6 class="user-name mb-0">نیلوفر</h6>
+        <p class="available-balance">حساب شما <span><span class="counter">350000</span></span><span> تومان</span></p>
+      </div>
+    </div>
+    <!-- Sidenav Nav-->
+    <ul class="sidenav-nav pl-0">
+      <li><a href="profile.html"><i class="lni lni-user"></i>پروفایل من</a></li>
+      <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>اطلاعیه ها <span
+            class="ml-3 badge badge-warning">3</span></a></li>
+      <li class="suha-dropdown-menu"><a href="#"><i class="lni lni-cart"></i>صفحات خرید</a>
+        <ul>
+          <li><a href="shop-grid.html">- فروشگاه شبکه</a></li>
+          <li><a href="shop-list.html">- لیست فروشگاه</a></li>
+          <li><a href="single-product.html">- مشخصات محصول</a></li>
+          <li><a href="featured-products.html">- محصولات برجسته</a></li>
+          <li><a href="flash-sale.html">- فروش فلش</a></li>
+        </ul>
+      </li>
+      <li><a href="pages.html"><i class="lni lni-empty-file"></i>تمام صفحات</a></li>
+      <li class="suha-dropdown-menu"><a href="wishlist-grid.html"><i class="lni lni-heart"></i>علاقه مندی های من</a>
+        <ul>
+          <li><a href="wishlist-grid.html">- شبکه مورد علاقه</a></li>
+          <li><a href="wishlist-list.html">- لیست دلخواه</a></li>
+        </ul>
+      </li>
+      <li><a href="settings.html"><i class="lni lni-cog"></i>تنظیمات</a></li>
+      <li><a href="intro.html"><i class="lni lni-power-switch"></i>خروج از سیستم</a></li>
+    </ul>
+    <!-- Go Back Button-->
+    <div class="go-home-btn" id="goHomeBtn"><i class="lni lni-arrow-right"></i></div>
+  </div>
+  <!-- PWA Install Alert-->
+  <!-- <div class="toast pwa-install-alert shadow" id="pwaInstallToast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="8000" data-autohide="true">
+      <div class="toast-body">
+        <button class="ml-3 close" type="button" data-dismiss="toast" aria-label="نزدیک"><span aria-hidden="true">×</span></button>
+        <div class="content d-flex align-items-center mb-2"><img src="~/app/img/icons/icon-72x72.png" alt="">
+          <h6 class="mb-0 text-white">افزودن به صفحه اصلی</h6>
+        </div><span class="mb-0 d-block text-white">سوهارا در صفحه اصلی تلفن همراه خود اضافه کنید. بر روی دکمه <strong class="mx-1">"افزودن به صفحه اصلی"</strong> کلیک کنید و مانند یک برنامه معمولی از آن لذت ببرید.</span>
+      </div>
+    </div> -->
+  <div class="page-content-wrapper">
+    @RenderBody()
+  </div>
+  <!-- Internet Connection Status-->
+  <div class="internet-connection-status" id="internetStatus"></div>
+  <!-- Footer Nav-->
+  <div class="footer-nav-area" id="footerNav">
+    <div class="container h-100 px-0">
+      <div class="suha-footer-nav h-100">
+        <ul class="h-100 d-flex align-items-center justify-content-between pl-0">
+          <li class="active"><a href="home.html"><i class="lni lni-home"></i></a></li>
+          <li><a href="message.html"><i class="lni lni-life-ring"></i></a></li>
+          <li><a href="cart.html"><i class="lni lni-shopping-basket"></i></a></li>
+          <li><a href="pages.html"><i class="lni lni-heart"></i></a></li>
+          <li><a href="settings.html"><i class="lni lni-cog"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+  
+
+  </div>
+  <!-- All JavaScript Files-->
+  <script src="~/app/js/jquery.min.js"></script>
+  <script src="~/app/js/bootstrap.bundle.min.js"></script>
+  <script src="~/app/js/waypoints.min.js"></script>
+  <script src="~/app/js/jquery.easing.min.js"></script>
+  <script src="~/app/js/owl.carousel.min.js"></script>
+  <script src="~/app/js/jquery.counterup.min.js"></script>
+  <script src="~/app/js/jquery.countdown.min.js"></script>
+  <script src="~/app/js/default/jquery.passwordstrength.js"></script>
+  <script src="~/app/js/wow.min.js"></script>
+  <script src="~/app/js/jarallax.min.js"></script>
+  <script src="~/app/js/jarallax-video.min.js"></script>
+  <script src="~/app/js/default/dark-mode-switch.js"></script>
+  <script src="~/app/js/default/no-internet.js"></script>
+  <script src="~/app/js/default/active.js"></script>
+  <script src="~/app/js/pwa.js"></script>
+
+ @* ////////////////////////////////////// *@
+
+  <div class="col-4 d-none"><input type="text" id="userInput" value="1" /></div>
+  <div class="col-4 d-none"><input type="text" id="messageInput" /></div>
+  <input type="button" id="sendButton" onclick="a();" value="Send Message" class="d-none" />
+  <script src="~/js/signalr/dist/browser/signalr.js"></script>
+  <script src="~/js/chat.js">
+  
+  </script>
+@* ///////////////////////////////////////////////////// *@
+<script>
+  function b(phone)
+  {
+    
+        window.location.href="/driver/mapclient/mapclient?phone="+phone;
+    
+  }
+
+  
+</script>
+
+
+
+
+
+</body>
+
+</html>

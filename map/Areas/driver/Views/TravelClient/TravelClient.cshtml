@@ -1,0 +1,121 @@
+<div class="page-content-wrapper">
+    <div class="container">
+        <!-- Notifications Area-->
+        <div class="notification-area pt-3 pb-2">
+            <h6 style="text-align: center;" class="pl-1">سفرهای پیشین</h6>
+            <div class="list-group">
+
+                @* <!-- Single Notification--><a class="list-group-item readed d-flex align-items-center"
+                    href="notification-details.html"><span class="noti-icon"><i class="lni lni-dropbox"></i></span>
+                    <div class="noti-info">
+                    <h6 class="mb-0">سفر لغو شده</h6><span style="text-align: left;"> 99/10/10 </span>
+                    </div></a>
+                    <!-- Single Notification--><a class="list-group-item span d-flex align-items-center"
+                    href="notification-details.html"><span class="noti-icon"><i class="lni lni-dropbox"></i></span>
+                    <div class="noti-info">
+                    <h6 class="mb-0">سفر انجام شده</h6><span style="text-align: left;"> 99/10/10 </span>
+                    </div></a>
+                    <!-- Single Notification--><a class="list-group-item d-flex align-items-center"
+                    href="notification-details.html"><span class="noti-icon"><i class="lni lni-dropbox"></i></span>
+                    <div class="noti-info">
+                    <h6 class="mb-0">راننده در دسترس نبود</h6><span style="text-align: left;"> 99/10/10 </span>
+                    </div></a>
+                *@
+@foreach (var item in ViewBag.List)
+{
+    if (item.TypePay=="راننده در دسترس نبود")
+    {
+        
+
+                <div class="accordian-area-wrapper mt-3">
+                    <a href="/driver/TravelClient/TravelDetails">
+                        <!-- Accordian Card-->
+                        <div class="card accordian-card clearfix">
+                            <div class="card-body">
+                                <div class="accordion" id="accordionExample">
+                                    <!-- Single Accordian-->
+                                    <div class="accordian-header" id="headingOne">
+                                        <button
+                                            class="d-flex align-items-center justify-content-between w-100 collapsed btn"
+                                            type="button" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="false" aria-controls="collapseOne"><span><i
+                                                    class="lni lni-alarm"></i> راننده در دسترس نبود </span>
+                                            <p style="font-family: iransans; margin-top: 18px;">
+                                                99/10/10
+                                            </p>
+                                            <i class="lni lni-chevron-left"> </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+    }
+    if (item.TypePay=="لغو شده")
+    {
+      
+                <div class="accordian-area-wrapper mt-3">
+                    <a href="/driver/TravelClient/TravelDetails">
+                        <!-- Accordian Card-->
+                        <div class="card accordian-card seller-card clearfix">
+                            <div class="card-body">
+                                <div class="accordion" id="accordionExample2">
+                                    <!-- Single Accordian-->
+                                    <div class="accordian-header" id="headingThree">
+                                        <button
+                                            class="d-flex align-items-center justify-content-between w-100 collapsed btn"
+                                            type="button" data-toggle="collapse" data-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree"><span>
+                                                <i class="lni lni-alarm"></i>سفر لغو شده</span>
+                                            <p style="font-family: iransans; margin-top: 18px;">
+                                                99/10/10
+                                            </p>
+                                            <i class="lni lni-chevron-left"> </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+}
+if (item.TypePay=="سفر انجام شده")
+    {
+      
+                <div class="accordian-area-wrapper mt-3">
+                    <a href="/driver/TravelClient/TravelDetails">
+
+                        <!-- Accordian Card-->
+                        <div class="card accordian-card others-card clearfix">
+                            <div class="card-body">
+                                <div class="accordion" id="accordionExample3">
+                                    <!-- Single Accordian-->
+                                    <div class="accordian-header" id="headingFive">
+                                        <button
+                                            class="d-flex align-items-center justify-content-between w-100 collapsed btn"
+                                            type="button" data-toggle="collapse" data-target="#collapseFive"
+                                            aria-expanded="false" aria-controls="collapseFive"><span><i
+                                                    class="lni lni-alarm"></i> سفر انجام شده </span>
+                                            <p style="font-family: iransans; margin-top: 18px;">
+                                                99/10/10
+                                            </p>
+                                            <i class="lni lni-chevron-left">
+
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+}
+}
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+  <div class="suha-sidenav-wrapper" id="sidenavWrapper">
+    <!-- Sidenav Profile-->
+    <div class="sidenav-profile">
+      @if (@Menu.photo != null)
+      {
+       <div class="user-profile"><img src="~/fileupload/@Menu.photo" alt=""></div>
+          
+      }else
+      {
+        <div class="user-profile"><img src="~/app/img/bg-img/9.jpg" alt=""></div>
+      }
+      
+      <div class="user-info">
+        @if (@Menu.name != null)
+        {
+           <h6 class="user-name mb-0">@Menu.name</h6>
+        }else
+        {
+           <h6 class="user-name mb-0">نام شما</h6>
+        }
+       
+        <p class="available-balance">حساب شما <span><span class="counter">350000</span></span><span> تومان</span></p>
+      </div>
+    </div>
+    <!-- Sidenav Nav-->
+    <ul class="sidenav-nav pl-0">
+      <li><a href="/profile/index"><i class="lni lni-user"></i>پروفایل من</a></li>
+      <li><a href="/mapclient/mapclient"><i class="lni lni-alarm lni-tada-effect"></i>در خواست تاکسی جو<span
+            class="ml-3 badge badge-warning"></span></a></li>
+              <li><a href="/travelclient/travelclient"><i class="lni lni-alarm lni-tada-effect"></i>  سفرهای پیشین  <span
+            class="ml-3 badge badge-warning"></span></a></li>
+               <li><a href="/pay/pay"><i class="lni lni-alarm lni-tada-effect"></i>   کیف پول  <span
+            class="ml-3 badge badge-warning"></span></a></li>
+                   <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i> تخفیف ها <span
+            class="ml-3 badge badge-warning"></span></a></li>
+                      <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>  پشتیبانی <span
+            class="ml-3 badge badge-warning"></span></a></li>
+
+      @* <li class="suha-dropdown-menu"><a href="#"><i class="lni lni-cart"></i>صفحات خرید</a>
+        <ul>
+          <li><a href="shop-grid.html">- فروشگاه شبکه</a></li>
+          <li><a href="shop-list.html">- لیست فروشگاه</a></li>
+          <li><a href="single-product.html">- مشخصات محصول</a></li>
+          <li><a href="featured-products.html">- محصولات برجسته</a></li>
+          <li><a href="flash-sale.html">- فروش فلش</a></li>
+        </ul>
+      </li> *@
+      @* <li><a href="pages.html"><i class="lni lni-empty-file"></i>تمام صفحات</a></li> *@
+      @* <li class="suha-dropdown-menu"><a href="wishlist-grid.html"><i class="lni lni-heart"></i>علاقه مندی های من</a> *@
+        @* <ul>
+          <li><a href="wishlist-grid.html">- شبکه مورد علاقه</a></li>
+          <li><a href="wishlist-list.html">- لیست دلخواه</a></li>
+        </ul>
+      </li>
+      <li><a href="settings.html"><i class="lni lni-cog"></i>تنظیمات</a></li> *@
+      <li><a href="intro.html"><i class="lni lni-power-switch"></i>خروج از سیستم</a></li>
+    </ul>
+    <!-- Go Back Button-->
+    <div class="go-home-btn" id="goHomeBtn"><i class="lni lni-arrow-right"></i></div>
+  </div>
