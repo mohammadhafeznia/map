@@ -14522,6 +14522,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\Views\\AboutUs\\AboutUs.cshtml",
+      "TargetPath": "Views\\AboutUs\\AboutUs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\Areas\\driver\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Areas\\driver\\Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
