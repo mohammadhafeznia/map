@@ -5836,23 +5836,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MEDIA MARK\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\123\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj",
+      "projectUniqueName": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj",
       "projectName": "ViewModel",
-      "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj",
-      "packagesPath": "C:\\Users\\MEDIA MARK\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\obj\\",
+      "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj",
+      "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5863,8 +5859,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj"
+            "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj"
             }
           }
         }

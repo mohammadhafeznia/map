@@ -5983,23 +5983,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MEDIA MARK\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\123\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj",
+      "projectUniqueName": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj",
       "projectName": "map",
-      "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj",
-      "packagesPath": "C:\\Users\\MEDIA MARK\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\obj\\",
+      "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj",
+      "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6010,11 +6006,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj"
+            "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj"
             },
-            "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj": {
-              "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj"
+            "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj": {
+              "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj"
             }
           }
         }
