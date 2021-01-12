@@ -14402,11 +14402,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\TravelClient\\TravelClient.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\TravelClient\\TravelClient.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -14452,8 +14447,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\TravelDriver\\TravelDriver.cshtml",
+      "TargetPath": "Areas\\driver\\Views\\TravelDriver\\TravelDriver.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Views\\AboutUs\\AboutUs.cshtml",
       "TargetPath": "Views\\AboutUs\\AboutUs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\TravelDriver\\CurrentRequests.cshtml",
+      "TargetPath": "Areas\\driver\\Views\\TravelDriver\\CurrentRequests.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14467,6 +14472,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\Home\\pay.cshtml",
+      "TargetPath": "Areas\\driver\\Views\\Home\\pay.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\Home\\otpconfig.cshtml",
       "TargetPath": "Areas\\driver\\Views\\Home\\otpconfig.cshtml",
       "FileKind": "mvc"
@@ -14477,6 +14487,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\Home\\DriverIncome.cshtml",
+      "TargetPath": "Areas\\driver\\Views\\Home\\DriverIncome.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Views\\mapclient\\mapclient.cshtml",
       "TargetPath": "Views\\mapclient\\mapclient.cshtml",
       "FileKind": "mvc"
@@ -14484,6 +14499,11 @@
     {
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\TravelDriver\\TravelDetails.cshtml",
+      "TargetPath": "Areas\\driver\\Views\\TravelDriver\\TravelDetails.cshtml",
       "FileKind": "mvc"
     },
     {
