@@ -14674,8 +14674,18 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+      "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\Views\\AboutUs\\AboutUs.cshtml",
+      "TargetPath": "Views\\AboutUs\\AboutUs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\Areas\\driver\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Areas\\driver\\Views\\Shared\\Error.cshtml",
+=======
       "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Areas\\driver\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
       "FileKind": "mvc"
     },
     {
