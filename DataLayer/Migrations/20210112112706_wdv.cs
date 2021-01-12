@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataLayer.Migrations
 {
-    public partial class tax : Migration
+    public partial class wdv : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,6 +28,24 @@ namespace DataLayer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tbl_driver", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Tbl_pays",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Phone = table.Column<string>(nullable: true),
+                    NameFamily = table.Column<string>(nullable: true),
+                    Pay = table.Column<int>(nullable: false),
+                    Harvest = table.Column<int>(nullable: false),
+                    Paytime = table.Column<DateTime>(nullable: false),
+                    havesttime = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tbl_pays", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,6 +93,9 @@ namespace DataLayer.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Tbl_driver");
+
+            migrationBuilder.DropTable(
+                name: "Tbl_pays");
 
             migrationBuilder.DropTable(
                 name: "tbl_Travels");

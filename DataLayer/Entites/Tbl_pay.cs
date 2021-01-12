@@ -6,8 +6,7 @@ namespace DataLayer.Entites
     {
           [Key]
          public int Id { get; set; }
-    
-    
+         public string Phone{ get; set; }
          public string NameFamily { get; set; }
           public int Pay { get; set; }
           public int Harvest { get; set; }

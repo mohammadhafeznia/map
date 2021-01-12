@@ -8,6 +8,9 @@ using map.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 using ZarinPal.Class;
+using DataLayer.Entites;
+using DataLayer.Context;
+
 namespace faraboom.Controllers {
 
     public class PayController : Controller {
@@ -26,25 +29,36 @@ namespace faraboom.Controllers {
             db = _db;
         }
 
-        public IActionResult Index (int pay) {
-            
-            
+        public IActionResult Index (int id) 
+        {
+            Tbl_pay A=new Tbl_pay()
+            {
+              Phone=User.Identity.GetId(),
+               Pay=id,
+               Paytime=DateTime.UtcNow
 
-           Menu.pay=Convert.ToInt32(pay);
+            };
+            db.Tbl_pays.Add(A);
+             db.SaveChanges();
+            
+           
             return RedirectToAction ("Request");
+
+            
         }
         //////////////////////////////////////////////////////////////////فرایند خرید
 
         public async Task<IActionResult> Request () {
 
             var quser = db.tbl_Users.Where (a => a.phone == (User.Identity.GetId ())).SingleOrDefault ();
-          
+            var qpay=db.Tbl_pays.Where(a=>a.Phone==User.Identity.GetId ()).OrderByDescending(a=>a.Id).Take(1).SingleOrDefault();
+           sumshop=qpay.Pay;
             var result = await _payment.Request (new DtoRequest () {
-                Mobile = quser.phone,
+                    Mobile = quser.phone,
                     CallbackUrl = "https://localhost:5001/pay/validate",
                     Description = quser.NameFamily,
                     Email ="tak1.ghasemi@gmail.com",
-                    Amount = 20000,
+                    Amount =qpay.Pay,
                     MerchantId = "ab99ecd5-bc8a-402f-8ead-b8dca3ed0e35"
             }, ZarinPal.Class.Payment.Mode.sandbox);
             return Redirect ($"https://sandbox.zarinpal.com/pg/StartPay/{result.Authority}");
@@ -56,7 +70,7 @@ namespace faraboom.Controllers {
         public async Task<IActionResult> Validate (string authority, string status) {
 
             var verification = await _payment.Verification (new DtoVerification {
-                    Amount =Menu.pay,
+                    Amount =sumshop,
                     MerchantId = "ab99ecd5-bc8a-402f-8ead-b8dca3ed0e35",
                     Authority = authority
             }, Payment.Mode.sandbox);

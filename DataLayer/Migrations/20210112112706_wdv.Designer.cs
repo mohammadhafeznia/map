@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(Contextdb))]
-    [Migration("20210112082138_tax")]
-    partial class tax
+    [Migration("20210112112706_wdv")]
+    partial class wdv
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -136,6 +136,36 @@ namespace DataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tbl_driver");
+                });
+
+            modelBuilder.Entity("DataLayer.Entites.Tbl_pay", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Harvest")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameFamily")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pay")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Paytime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("havesttime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tbl_pays");
                 });
 #pragma warning restore 612, 618
         }

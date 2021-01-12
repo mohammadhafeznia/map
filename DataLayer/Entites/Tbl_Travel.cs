@@ -12,8 +12,6 @@ namespace DataLayer.Entites
         public string Distance { get; set; }
         public string Price { get; set; }
         public string Time { get; set; }
-        
-        
         public DateTime DateDay { get; set; }
         public int DriverId { get; set; }
         public string TypePay { get; set; }

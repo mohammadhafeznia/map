@@ -135,6 +135,36 @@ namespace DataLayer.Migrations
 
                     b.ToTable("Tbl_driver");
                 });
+
+            modelBuilder.Entity("DataLayer.Entites.Tbl_pay", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Harvest")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameFamily")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pay")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Paytime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("havesttime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tbl_pays");
+                });
 #pragma warning restore 612, 618
         }
     }

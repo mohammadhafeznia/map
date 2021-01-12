@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj",
-=======
-  "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj",
->>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14396,7 +14392,6 @@
   "RootNamespace": "map",
   "Documents": [
     {
-<<<<<<< HEAD
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Views\\Home\\otpconfig.cshtml",
       "TargetPath": "Views\\Home\\otpconfig.cshtml",
       "FileKind": "mvc"
@@ -14454,6 +14449,11 @@
     {
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\_ViewImports.cshtml",
       "TargetPath": "Areas\\driver\\Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Views\\AboutUs\\AboutUs.cshtml",
+      "TargetPath": "Views\\AboutUs\\AboutUs.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14543,169 +14543,10 @@
     },
     {
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-=======
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\TravelClient\\TravelDetails.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\TravelClient\\TravelDetails.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\TravelClient\\TravelClient.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\TravelClient\\TravelClient.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Shared\\_Partial_Menu.cshtml",
-      "TargetPath": "Views\\Shared\\_Partial_Menu.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\TravelClient\\TravelClient.cshtml",
-      "TargetPath": "Views\\TravelClient\\TravelClient.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\mapaccept\\mapAccept.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\mapaccept\\mapAccept.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Login\\index.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Login\\index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Home\\otp.cshtml",
-      "TargetPath": "Views\\Home\\otp.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Pay\\Pay.cshtml",
-      "TargetPath": "Views\\Pay\\Pay.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Home\\intro.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Home\\intro.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\mapclient\\mapclient.cshtml",
-      "TargetPath": "Views\\mapclient\\mapclient.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Home\\intro.cshtml",
-      "TargetPath": "Views\\Home\\intro.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Profile\\Edit.cshtml",
-      "TargetPath": "Views\\Profile\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Home\\otpconfig.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Home\\otpconfig.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\mapclient\\load.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\mapclient\\load.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\mapclient\\mapclient.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\mapclient\\mapclient.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Home\\otp.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Home\\otp.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\TravelClient\\TravelDetails.cshtml",
-      "TargetPath": "Views\\TravelClient\\TravelDetails.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-<<<<<<< HEAD
-      "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\Views\\AboutUs\\AboutUs.cshtml",
-      "TargetPath": "Views\\AboutUs\\AboutUs.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\Areas\\driver\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Shared\\Error.cshtml",
-=======
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
->>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Profile\\index.cshtml",
-      "TargetPath": "Views\\Profile\\index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Areas\\driver\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Areas\\driver\\Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
->>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-<<<<<<< HEAD
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Areas\\driver\\Views\\Home\\Index.cshtml",
       "TargetPath": "Areas\\driver\\Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -14723,25 +14564,6 @@
     {
       "FilePath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\Views\\Profile\\Edit.cshtml",
       "TargetPath": "Views\\Profile\\Edit.cshtml",
-=======
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Home\\otpconfig.cshtml",
-      "TargetPath": "Views\\Home\\otpconfig.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\mapclient\\load.cshtml",
-      "TargetPath": "Views\\mapclient\\load.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
->>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
       "FileKind": "mvc"
     }
   ],
