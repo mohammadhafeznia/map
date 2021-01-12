@@ -5983,11 +5983,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\123\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\my pc\\.nuget\\packages\\": {}
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj",
       "projectName": "map",
       "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj",
@@ -5996,6 +6001,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj",
+      "projectName": "map",
+      "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj",
+      "packagesPath": "C:\\Users\\my pc\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6006,11 +6021,19 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+<<<<<<< HEAD
             "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj": {
               "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj"
             },
             "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj": {
               "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj"
+=======
+            "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj"
+            },
+            "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj": {
+              "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj"
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
             }
           }
         }
@@ -6063,7 +6086,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
