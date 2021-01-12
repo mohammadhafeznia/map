@@ -5667,13 +5667,35 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\MEDIA MARK\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\123\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\my pc\\.nuget\\packages\\": {}
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj",
+      "projectName": "DataLayer",
+      "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj",
+      "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj",
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
       "projectName": "DataLayer",
       "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj",
       "packagesPath": "C:\\Users\\MEDIA MARK\\.nuget\\packages\\",
@@ -5683,7 +5705,12 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

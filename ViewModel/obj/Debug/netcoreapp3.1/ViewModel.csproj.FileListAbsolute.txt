@@ -10,3 +10,15 @@ c:\Users\MEDIA MARK\Desktop\taxi64bit\map\ViewModel\obj\Debug\netcoreapp3.1\View
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.csproj.CopyComplete
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.dll
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.pdb
+c:\Users\123\Desktop\taxiclon\map\ViewModel\bin\Debug\netcoreapp3.1\ViewModel.deps.json
+c:\Users\123\Desktop\taxiclon\map\ViewModel\bin\Debug\netcoreapp3.1\ViewModel.dll
+c:\Users\123\Desktop\taxiclon\map\ViewModel\bin\Debug\netcoreapp3.1\ViewModel.pdb
+c:\Users\123\Desktop\taxiclon\map\ViewModel\bin\Debug\netcoreapp3.1\DataLayer.dll
+c:\Users\123\Desktop\taxiclon\map\ViewModel\bin\Debug\netcoreapp3.1\DataLayer.pdb
+c:\Users\123\Desktop\taxiclon\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.csprojAssemblyReference.cache
+c:\Users\123\Desktop\taxiclon\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.AssemblyInfoInputs.cache
+c:\Users\123\Desktop\taxiclon\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.AssemblyInfo.cs
+c:\Users\123\Desktop\taxiclon\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.csproj.CoreCompileInputs.cache
+c:\Users\123\Desktop\taxiclon\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.csproj.CopyComplete
+c:\Users\123\Desktop\taxiclon\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.dll
+c:\Users\123\Desktop\taxiclon\map\ViewModel\obj\Debug\netcoreapp3.1\ViewModel.pdb

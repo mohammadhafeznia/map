@@ -1,7 +1,27 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj": {}
+=======
+<<<<<<< HEAD
+    "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj": {}
+  },
+  "projects": {
+    "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj",
+        "projectName": "DataLayer",
+        "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj": {}
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
   },
   "projects": {
     "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
@@ -17,7 +37,12 @@
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+          "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -73,7 +98,24 @@
         }
       }
     },
+<<<<<<< HEAD
     "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj": {
+=======
+<<<<<<< HEAD
+    "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj",
+        "projectName": "map",
+        "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\map.csproj",
+        "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\map\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "c:\\Users\\my pc\\Desktop\\taxinew\\map\\map\\map.csproj": {
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\map\\map.csproj",
@@ -86,7 +128,12 @@
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+          "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -97,11 +144,27 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+<<<<<<< HEAD
               "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
                 "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj"
               },
               "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj": {
                 "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj"
+=======
+<<<<<<< HEAD
+              "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj"
+              },
+              "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj"
+=======
+              "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj"
+              },
+              "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj"
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
               }
             }
           }
@@ -158,7 +221,24 @@
         }
       }
     },
+<<<<<<< HEAD
     "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj": {
+=======
+<<<<<<< HEAD
+    "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj",
+        "projectName": "ViewModel",
+        "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj",
+        "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj": {
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj",
@@ -171,7 +251,12 @@
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+          "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -182,8 +267,18 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+<<<<<<< HEAD
               "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
                 "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj"
+=======
+<<<<<<< HEAD
+              "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj"
+=======
+              "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj"
+>>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
               }
             }
           }
