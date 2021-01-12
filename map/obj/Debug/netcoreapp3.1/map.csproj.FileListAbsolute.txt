@@ -381,8 +381,6 @@ c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Area
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Shared\Error.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Shared\_Layout.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelClient\TravelClient.cshtml.g.cs
-c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelClient\TravelDetails.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\_ViewImports.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\_ViewStart.cshtml.g.cs
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
@@ -412,6 +410,14 @@ c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\staticweba
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\map.dll
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\map.pdb
 c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\map.genruntimeconfig.cache
+<<<<<<< HEAD
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Views\AboutUs\AboutUs.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Home\pay.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelDriver\TravelDetails.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelDriver\TravelDriver.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\Home\DriverIncome.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\taxi64bit\map\map\obj\Debug\netcoreapp3.1\Razor\Areas\driver\Views\TravelDriver\CurrentRequests.cshtml.g.cs
+=======
 c:\Users\123\Desktop\taxiclon\map\map\bin\Debug\netcoreapp3.1\appsettings.Development.json
 c:\Users\123\Desktop\taxiclon\map\map\bin\Debug\netcoreapp3.1\appsettings.json
 c:\Users\123\Desktop\taxiclon\map\map\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -826,4 +832,8 @@ c:\Users\123\Desktop\taxiclon\map\map\obj\Debug\netcoreapp3.1\staticwebassets\ma
 c:\Users\123\Desktop\taxiclon\map\map\obj\Debug\netcoreapp3.1\map.dll
 c:\Users\123\Desktop\taxiclon\map\map\obj\Debug\netcoreapp3.1\map.pdb
 c:\Users\123\Desktop\taxiclon\map\map\obj\Debug\netcoreapp3.1\map.genruntimeconfig.cache
+<<<<<<< HEAD
 c:\Users\123\Desktop\taxiclon\map\map\obj\Debug\netcoreapp3.1\Razor\Views\AboutUs\AboutUs.cshtml.g.cs
+=======
+>>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
+>>>>>>> 988705fe136624950bd9294ea86932d07aa7ec91

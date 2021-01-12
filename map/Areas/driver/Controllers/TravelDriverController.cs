@@ -16,19 +16,22 @@ using DataLayer.Context;
 using DataLayer.Entites;
 namespace map.driver.Controllers {
     [Area ("driver")]
-    public class TravelClientController : Controller {
+    public class TravelDriverController : Controller {
         private readonly Contextdb _db;
         public static string mobile;
-        public TravelClientController (Contextdb db) {
+        public TravelDriverController (Contextdb db) {
             _db = db;
         }
 
-        public IActionResult TravelClient () {
+        public IActionResult TravelDriver () {
            var qlist=_db.tbl_Travels.OrderByDescending(a=>a.Id).ToList();
            ViewBag.List=qlist;
             return View ();
         }
           public IActionResult TravelDetails () {
+            return View ();
+        }
+               public IActionResult CurrentRequests () {
             return View ();
         }
 

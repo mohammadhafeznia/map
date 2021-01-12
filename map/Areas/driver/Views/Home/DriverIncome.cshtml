@@ -1,0 +1,97 @@
+<form>
+    <div class="page-content-wrapper">
+        <div class="container">
+            <!-- Checkout Wrapper-->
+            <div class="checkout-wrapper-area py-3">
+                <!-- Choose Payment Method-->
+                <div class="choose-payment-method">
+                    <h6 class="mb-3 text-center"> درامد شما در تاکسی جو </h6>
+                    <div class="row justify-content-center g-3">
+                        <!-- Single Payment Method-->
+                        <div class="single-payment-method"><a class="credit-card" href="/pay/Request/10000">
+                                <P>کل مانده حساب شما</P><i class="lni lni-credit-cards"></i>
+                                <h6>10000 تومان</h6>
+                            </a></div>
+                    </div>
+                    <!-- Single Payment Method-->
+                    <br>
+
+
+
+
+
+
+
+                    @* <div style="text-align: center;" >
+                        <h5 class="total-price mb-0"><span class="counter">10000</span> تومان</h5>
+                        </div> *@
+
+                    <button class="btn btn-warning btn-lg w-100" type="submit" onclick="sendpay();"> برداشت </button>
+                    <script>
+                        function sendpay() {
+                            window.location.href = "/pay/index/" + document.getElementById("pay").Value;
+                        }
+                    </script>
+
+
+
+
+                    <!-- Cart Wrapper-->
+                    <div class="cart-wrapper-area py-3">
+                        <div class="cart-table card mb-3">
+                            <div class="table-responsive card-body">
+                                <table class="table mb-0">
+                                    <tbody>
+                                        <tr style="text-align: center;">
+                                            <th scope="row"><a href="#"><i> ردیف </i></a></th>
+                                            <th scope="row"><a href="#"><i> نوع عملیات </i></a></th>
+                                            <th scope="row"><a href="#"><i> تاریخ </i></a></th>
+
+                                        </tr>
+
+
+
+                                        <tr  style="text-align: center;" >
+                                            <th scope="row"><a class="remove-product" href="#"><i>1</i></a></th>
+                                            <td><a href="single-product.html"> برداشت <span> 100000 توامان </span> </a>
+                                            </td>
+                                            <td>
+                                                <p>99/10/11</p>
+                                            </td>
+
+                                        </tr>
+
+
+
+                                        <tr  style="text-align: center;">
+                                            <th scope="row"><a style="background-color: #38c540 !important;"
+                                                    class="remove-product" href="#"><i>2</i></a></th>
+                                            <td><a href="single-product.html"> واریز <span>  100000تومان </span> </a>
+                                            </td>
+                                            <td>
+                                                <p>99/10/9</p>
+                                            </td>
+
+                                        </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Coupon Area-->
+
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</form>

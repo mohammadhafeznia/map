@@ -38,6 +38,19 @@ namespace map.driver.Controllers
             return View();
         }
 
+
+            public IActionResult pay()
+        {
+            return View();
+        }
+
+        
+          public IActionResult DriverIncome () {
+            return View ();
+        }
+
+
+
         public IActionResult intro()
         {
 
