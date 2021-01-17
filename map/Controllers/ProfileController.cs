@@ -98,9 +98,12 @@ namespace map.Controllers
              
 
             ///name.photo.credit
-             Menu.name=_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().NameFamily;
-             Menu.photo=_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().photo;
-             //
+            //  Menu.name=_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().NameFamily;
+            //  Menu.photo=_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().photo;
+            //  //
+             HttpContext.Session.SetString ("name", _db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().NameFamily);
+             HttpContext.Session.SetString ("photo",_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().photo);
+
 
             return RedirectToAction("index");
         }

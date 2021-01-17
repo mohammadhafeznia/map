@@ -12,6 +12,12 @@ namespace DataLayer.Entites
           public int Harvest { get; set; }
          public DateTime Paytime { get; set; }
          public DateTime havesttime { get; set; }
+         public bool status { get; set; }
+        public int idtravel { get; set; }
+        
+        
+         
+         
          
     
     

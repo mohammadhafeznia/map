@@ -6,5 +6,6 @@ namespace map.Models
         public static string name;
         public static string Credit; 
         public static int pay;
+        public static int counter;
     }
 }

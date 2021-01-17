@@ -15,62 +15,27 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using driver.Controllers;
+using Microsoft.AspNetCore.Hosting;
 
 namespace map.driver.Controllers
 {
-     [Area("driver")]
-    public class HomeController : Controller
+    
+    public class HomeController : BaseController
     {
-        private readonly Contextdb _db;
-        public static string mobile;
-        public HomeController(Contextdb db)
-        {
-            _db = db;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+      
+      public HomeController(Contextdb _db,IWebHostEnvironment env):base(_db,env)
+      {
+          
+      }
+        
         public IActionResult Privacy()
         {
+            info();
             return View();
         }
-
-
-            public IActionResult pay()
-        {
-            return View();
-        }
-
         
-          public IActionResult DriverIncome () {
-            return View ();
-        }
-
-
-
-        public IActionResult intro()
-        {
-
-            return View();
-        }
-        public IActionResult otp()
-        {
-            if (User.Identity.IsAuthenticated)
-            {
-                  return RedirectToAction("mapclient","mapclient");
-            }
-
-            return View();
-        }
-
-        public IActionResult mapclient()
-        {
-           
-            return View();
-        }
 
       public IActionResult otpconfig()
       {
@@ -83,7 +48,7 @@ namespace map.driver.Controllers
         public IActionResult otpconfig(Vm_User us)
         {
            ViewBag.Mobile=mobile;
-            var q=_db.tbl_Users.Where(a =>a.phone==mobile).SingleOrDefault();
+            var q=db.tbl_Users.Where(a =>a.phone==mobile).SingleOrDefault();
             if (q.token==us.token)
             {
                            var claims = new List<Claim> () {
@@ -117,7 +82,7 @@ namespace map.driver.Controllers
             Random rnd = new Random();
             string number = rnd.Next(1000, 9999).ToString();
             mobile=us.phone;
-            var qcheck = _db.tbl_Users.Where(a => a.phone == us.phone).SingleOrDefault();
+            var qcheck = db.tbl_Users.Where(a => a.phone == us.phone).SingleOrDefault();
             if (qcheck == null)
             {
                 Tbl_User user = new Tbl_User()
@@ -125,8 +90,8 @@ namespace map.driver.Controllers
                     phone = us.phone,
                     token = "1234"
                 };
-                _db.tbl_Users.Add(user);
-                _db.SaveChanges();
+                db.tbl_Users.Add(user);
+                db.SaveChanges();
 
                 // var api = new KavenegarApi("3871353043697339486A70384F544A4A574C74612B51432F4C7A4B305076645457396F5267456F7A5A34383D");
                 // api.VerifyLookup(us.phone, number, "taxijo");
@@ -135,8 +100,8 @@ namespace map.driver.Controllers
             }else
             {
                 qcheck.token="1234";
-                 _db.tbl_Users.Update(qcheck);
-                _db.SaveChanges();
+                 db.tbl_Users.Update(qcheck);
+                db.SaveChanges();
 
                 // var api = new KavenegarApi("3871353043697339486A70384F544A4A574C74612B51432F4C7A4B305076645457396F5267456F7A5A34383D");
                 // api.VerifyLookup(us.phone, number, "taxijo");
@@ -150,14 +115,13 @@ namespace map.driver.Controllers
             return RedirectToAction("otpconfig");
         }
 
-
-
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        //exist
+        public IActionResult exit()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+         HttpContext.SignOutAsync (CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction ("index","login",new{area="driver"});
+            
         }
+        
     }
 }

@@ -67,10 +67,12 @@
             @* قیمت *@
             <p id="pricedemo" class="btn btn-primary" style="font-family: iransans;display: revert !important;">هزینه سفر :</p>
              <input type="text" class="d-none"  asp-for="Price">
-            
+            <input type="text" id="phoneclient" value="@Model.UserPhone" style="display: none;">
 
            <div class="row justify-content-center">
-                 <a href="/driver/mapaccept/mapaccept?phone=@Model.UserPhone"  class="btn btn-warning mt-0  col-5 " style="font-family: iransans;display: revert !important;">پذیرش مسافر</a>
+               <audio id="my_audio" src="~/app/img/icons/ring.mp3" loop="loop" ></audio>
+
+                 <a onclick="acceptdriver();"  class="btn btn-warning mt-0  col-5 " style="font-family: iransans;display: revert !important;">پذیرش مسافر</a>
                
                 <a href="/driver/home/privacy"  class="btn btn-danger mt-0  col-5 ml-2" style="font-family: iransans;display: revert !important;color:white">رد کردن مسافر</a>
            
@@ -112,8 +114,11 @@
 </div>
 
 
-
 <script>
+   
+</script>
+<script>
+    var t=1;
   document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma( document.getElementById('Price').value) + "&nbsp;" + "تومان";
     // Creating map options
     var mapOptions = {
@@ -163,7 +168,7 @@
 
     var a, b;
     // Creating a marker
- debugger
+ 
   var a=document.getElementById("Origin").value.replace("LatLng","").replace("(" ,"").replace(")","");
   var b=document.getElementById("Destination").value.replace("LatLng","").replace("(" ,"").replace(")","");
 
@@ -374,12 +379,50 @@
   
  }
 
- function ca(phone)
+ 
+
+function ca(phone)
   {
+      if(phone==document.getElementById('phoneclient').value)
+      {
+          window.location.href="/driver/home/privacy";
+
+      }
+   
+          
     
-        window.location.href="/driver/home/privacy";
+         
     
   }
 
+
 </script>
-<audio id="my_audio" src="~/app/img/icons/ring.mp3" loop="loop" ></audio>
+
+
+<div class="col-4 d-none"><input type="text" id="userInput" value="@Model.UserPhone" /></div>
+  <div class="col-4 d-none"><input type="text" id="messageInput" value="@User.Identity.GetId()" /></div>
+  <input type="button" id="sendButton" onclick="a();" value="Send Message" class="d-none" />
+  <script src="~/js/signalr/dist/browser/signalr.js"></script>
+  <script> src="~/js/chat.js"></script>
+  <script>
+       function sa(phone,driverid)
+  {
+      if(phone==document.getElementById('phoneclient').value && driverid==document.getElementById('messageInput').value )
+      {
+           @* Window.location.href="/driver/mapaccept/mapaccept?phone="+document.getElementById("UserPhone").value; *@
+           
+           
+              window.location.href="/driver/mapaccept/mapaccept?phone="+phone;
+           
+            
+      }else{
+           window.location.href="/driver/home/privacy";
+
+      }
+   
+       
+    
+  }
+
+  </script>
+ 

@@ -1,4 +1,3 @@
-
 @model ViewModel.Vm_passenger
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
@@ -21,7 +20,7 @@
     .mapbox {
 
         background-color: #0d3bd16b;
-        width: 100%;
+        @* width: 100%; *@
         height: 58px;
         position: fixed;
         bottom: 30px;
@@ -48,55 +47,99 @@
     <div id="map">
 
 
-        
 
-<form action="/mapclient/AddTravel" method="POST">
-        <div id="msg" class="mapbox alert aler-info text-center  " style="height:Auto;">
 
-            @* مسافت *@
-            <p id="distancedemo" class="btn btn-primary" style="font-family: iransans;">@Model.NameFamily</p>
-             @* مبدا *@
-            <p id="Origindemo" class="d-none" style="font-family: iransans;"></p>
-            <input type="text" class="d-none"  asp-for="Origin">
-            @* مقصد *@
-            <p id="destinationdemo" class="d-none" style="font-family: iransans;"></p>
-            <input type="text" class="d-none"  asp-for="Destination">
-            @* زمان رسیدن *@
-            <p id="timedemo" class="btn btn-primary" style="font-family: iransans;"> @Model.phone</p>
-           
-            
-            @* قیمت *@
-            <p id="pricedemo" class="btn btn-primary" style="font-family: iransans;">هزینه سفر :</p>
-             <input type="text" class="d-none"  asp-for="Price">
-            
+        <form action="/mapclient/AddTravel" method="POST">
+            <div id="msg" class="mapbox alert aler-info text-center row  " style="height:Auto;">
+                <div class="row justify-content-center mb-2">
+                    @if (@Model.photo != null)
+                    {
+                    <img src="~/fileupload/@Model.photo" style="width: 75px;border-radius: 50%;" alt="">
+                    }else
+                    {
+                    <img src="~/app/img/bg-img/9.jpg" style="width: 75px;border-radius: 50%;" alt="">
+                    }
 
-           <div class="row justify-content-center">
-               @if (@Model.photo != null)
-               {
-                   <img src="~/fileupload/@Model.photo" style="width: 75px;border-radius: 50%;" alt="">
-               }else
-               {
-                   <img src="~/app/img/bg-img/9.jpg" style="width: 75px;border-radius: 50%;" alt="">
-               }
-             
-                 
+                    
+                    
+
+
+
+                </div>
+
+                <div class="col-6">
+                   
+                    <p id="distancedemo" class="btn btn-primary form-control" style="font-family: iransans;">@Model.NameFamily</p>
+
+                </div>
+
+
                
-                <a href="/driver/home/privacy"  class="btn btn-danger mt-0  col-5 ml-2" style="font-family: iransans;color:white">رسیدن به مبدا</a>
-           
 
-           </div>
-              
-        </div>
+                <div class="col-6">
+                  
+                    <p id="timedemo" class="btn btn-primary form-control " style="font-family: iransans;"> @Model.phone</p>
 
-        <div id="refresh" class="mapboxrefresh text-center "
-            style="background-color: #a9bdff6b;width:100px;display:none">
-            <a href="" style="font-family: iransans;" class="">
-                <img src="~/app/img/icons/refresh.png" alt=""> جستجوی مجدد
-            </a>
+                </div>
 
 
-        </div>
-</form>
+                <div class="col-6">
+                   
+                    <p id="pricedemo" class="btn btn-primary form-control" style="font-family: iransans;">هزینه سفر :</p>
+                    <input type="text" class="d-none" asp-for="Price">
+
+                </div>
+                
+                <div class="col-6">
+
+                    <a href="/driver/home/privacy" class="btn btn-light form-control" style="font-family: iransans;color:black">تماس
+                        با مسافر</a>
+
+                </div>
+
+
+
+                <div class="col-6">
+                    <a onclick="sendnotif();" id="notif" class="btn btn-light form-control"
+                        style="font-family: iransans;color:black">رسیدن به مبدا</a>
+
+                </div>
+
+                <div class="col-6">
+                    <a onclick="sendend();"  class="btn btn-success form-control"
+                        style="font-family: iransans;color:black">اتمام سفر</a>
+
+                </div>
+
+
+
+
+
+             <div class="col-6">
+                  
+                    <p id="Origindemo" class="d-none" style="font-family: iransans;"></p>
+                    <input type="text" class="d-none" asp-for="Origin">
+
+                </div>
+
+                <div class="col-6">
+                  
+                    <p id="destinationdemo" class="d-none" style="font-family: iransans;"></p>
+                    <input type="text" class="d-none" asp-for="Destination">
+
+                </div>
+
+            </div>
+
+            <div id="refresh" class="mapboxrefresh text-center "
+                style="background-color: #a9bdff6b;width:100px;display:none">
+                <a href="" style="font-family: iransans;" class="">
+                    <img src="~/app/img/icons/refresh.png" alt=""> جستجوی مجدد
+                </a>
+
+
+            </div>
+        </form>
 
         <div id="mylocation" class="mapboxrefresh text-center " style="background-color: #a9bdff6b;width:100px;">
             <a onclick="findlocation();" style="font-family: iransans;" class="">
@@ -124,13 +167,13 @@
 
 <script>
 
-   
-   
-  document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma( document.getElementById('Price').value) + "&nbsp;" + "تومان";
+
+
+    document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma(document.getElementById('Price').value) + "&nbsp;" + "تومان";
     // Creating map options
     var mapOptions = {
         center: [38.2025589, 44.7686697],
-        zoom: 15
+        zoom: 13
     }
 
     var mabda = L.icon({
@@ -175,31 +218,31 @@
 
     var a, b;
     // Creating a marker
- debugger
-  var a=document.getElementById("Origin").value.replace("LatLng","").replace("(" ,"").replace(")","");
-  var b=document.getElementById("Destination").value.replace("LatLng","").replace("(" ,"").replace(")","");
+
+    var a = document.getElementById("Origin").value.replace("LatLng", "").replace("(", "").replace(")", "");
+    var b = document.getElementById("Destination").value.replace("LatLng", "").replace("(", "").replace(")", "");
 
 
-   var latlong =  a.split(',');
-  var latitude = parseFloat(latlong[0]);
-  var longitude = parseFloat(latlong[1]);
+    var latlong = a.split(',');
+    var latitude = parseFloat(latlong[0]);
+    var longitude = parseFloat(latlong[1]);
 
-   var latlong1 =  b.split(',');
-  var latitude1 = parseFloat(latlong1[0]);
-  var longitude1 = parseFloat(latlong1[1]);
+    var latlong1 = b.split(',');
+    var latitude1 = parseFloat(latlong1[0]);
+    var longitude1 = parseFloat(latlong1[1]);
 
 
-   L.Routing.control({
-    waypoints: [
-        L.latLng(latitude,longitude),
-        L.latLng(latitude1,longitude1)
-    ],
-    routeWhileDragging: true,
-    lineOptions: {
-                styles: [{ color: 'blue', opacity: 1, weight: 3 }]
-            }
+    L.Routing.control({
+        waypoints: [
+            L.latLng(latitude, longitude),
+            L.latLng(latitude1, longitude1)
+        ],
+        routeWhileDragging: true,
+        lineOptions: {
+            styles: [{ color: 'blue', opacity: 1, weight: 3 }]
+        }
 
-}).addTo(map);
+    }).addTo(map);
 
 
 
@@ -223,7 +266,7 @@
         document.getElementById('magsad').style.display = "block";
         document.getElementById('refresh').style.display = "block";
         document.getElementById('mylocation').style.display = "none";
-        document.getElementById('Origin').value=a.getLatLng();
+        document.getElementById('Origin').value = a.getLatLng();
 
     });
     marker4.on('click', function (e) {
@@ -233,7 +276,7 @@
         b = marker2;
         marker2.addTo(map);
         map.removeLayer(marker4);
-         document.getElementById('Destination').value=b.getLatLng();
+        document.getElementById('Destination').value = b.getLatLng();
 
         Route();
 
@@ -268,20 +311,20 @@
             var routes = e.routes;
             var summary = routes[0].summary;
             document.getElementById('distancedemo').innerHTML = "مسافت :" + "&nbsp;" + (summary.totalDistance / 1000).toFixed(2) + "&nbsp;" + "کیلومتر";
-             document.getElementById('Distance').value= (summary.totalDistance / 1000).toFixed(2);
+            document.getElementById('Distance').value = (summary.totalDistance / 1000).toFixed(2);
             document.getElementById('timedemo').innerHTML = "زمان  :" + "&nbsp;" + (summary.totalTime / 60).toFixed(2) + "&nbsp;" + "دقیقه";
-            document.getElementById('Time').value=(summary.totalTime / 60).toFixed(2);
+            document.getElementById('Time').value = (summary.totalTime / 60).toFixed(2);
             var km = (summary.totalDistance / 1000).toFixed(2);
             if (km > 5) {
                 var b = (km - 5) * 1000;
                 var sum = 4000 + b;
 
                 document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma(sum) + "&nbsp;" + "تومان";
-                 document.getElementById('Price').value=sum;
+                document.getElementById('Price').value = sum;
 
             } else {
                 document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma(4000) + "&nbsp;" + "تومان";
-                 document.getElementById('Price').value= 4000;
+                document.getElementById('Price').value = 4000;
 
 
             }
@@ -377,9 +420,42 @@
 
 
 
-​
-debugger
- acceptdriver(document.getElementById("phone").value);
+
 </script>
- 
-  
+<script>
+    function sendnotification(phone, id) {
+        debugger
+        if (id == document.getElementById('messageInput').value) {
+            if (document.getElementById('notif').innerHTML == 'رسیدن به مبدا') {
+                document.getElementById('notif').innerHTML = 'شروع حرکت';
+
+            } else if (document.getElementById('notif').innerHTML == 'شروع حرکت') {
+                document.getElementById('notif').innerHTML = 'تکمیل حرکت';
+
+            } else if (document.getElementById('notif').innerHTML == 'تکمیل حرکت') {
+                document.location.href = "/home/privacy"
+            }
+
+
+        }
+
+    }
+    function sendendtravel(phone, id)
+      {
+          debugger
+
+        if (id == document.getElementById('messageInput').value) {
+            document.location.href = "/driver/pay/end/"+id;
+        }
+
+      }
+</script>
+<div class="col-4 d-none"><input type="text" id="userInput" value="@Model.phone" /></div>
+<div class="col-4 d-none"><input type="text" id="messageInput" value="@User.Identity.GetId()" /></div>
+<input type="button" id="sendButton" onclick="a();" value="Send Message" class="d-none" />
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js">
+</script>
+<script>
+
+</script>

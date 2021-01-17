@@ -1,0 +1,75 @@
+ @model DataLayer.Entites.Tbl_driver;
+ <div class="page-content-wrapper">
+      <div class="container">
+        <!-- Profile Wrapper-->
+        <div class="profile-wrapper-area py-3">
+          <!-- User Information-->
+          <div class="card user-info-card">
+            <div class="card-body p-4 d-flex align-items-center">
+              @if(@Model.profile_img!=null)
+              {
+              <div class="user-profile mr-3"><img src="~/fileupload/@Model.profile_img" style="width: 150px;border-radius: 50%;" alt=""></div>
+
+              }
+              else{
+                              <div class="user-profile mr-3"><img src="~/app/img/bg-img/9.jpg" style="width: 150px;border-radius: 50%;" alt=""></div>
+
+              }
+              <div class="user-info">
+                <p class="mb-0 text-white">تاکسی جو </p>
+                <h5 class="mb-0">@Model.NameFamily</h5>
+              </div>
+            </div>
+          </div>
+          <!-- User Meta Data-->
+          <div class="card user-data-card">
+            <div class="card-body">
+              @* <div class="single-profile-data d-flex align-items-center justify-content-between">
+                <div class="title d-flex align-items-center"><i class="lni lni-user"></i><span>نام کاربری</span></div>
+                <div class="data-content">design-world </div>
+              </div> *@
+              <div class="single-profile-data d-flex align-items-center justify-content-between">
+                <div class="title d-flex align-items-center"><i class="lni lni-user"></i><span>نام و نام خانوادگی</span></div>
+                <div class="data-content" >@Model.NameFamily</div>
+              </div>
+              <div class="single-profile-data d-flex align-items-center justify-content-between">
+                <div class="title d-flex align-items-center"><i class="lni lni-phone"></i><span>تلفن</span></div>
+                <div class="data-content">@Model.phone</div>
+              </div>
+              @* <div class="single-profile-data d-flex align-items-center justify-content-between">
+                <div class="title d-flex align-items-center"><i class="lni lni-envelope"></i><span>آدرس ایمیل</span></div>
+                <div class="data-content">care@example.com                                </div>
+              </div> *@
+              <div class="single-profile-data d-flex align-items-center justify-content-between">
+                <div class="title d-flex align-items-center"><i class="lni lni-map-marker"></i><span>آدرس:</span></div>
+                <div class="data-content">@Model.Adress</div>
+              </div>
+              <div class="single-profile-data d-flex align-items-center justify-content-between">
+                <div class="title d-flex align-items-center"><i class="lni lni-star"></i><span>سفارش من</span></div>
+                <div class="data-content"><a class="btn btn-danger btn-sm" href="/travelclient/travelclient">نمایش</a></div>
+              </div>
+            </div>
+          </div>
+          <!-- Edit Profile-->
+          <div class="edit-profile-btn mt-3"><a class="btn btn-info w-100" href="/driver/profile/edit"><i class="lni lni-pencil mr-2"></i>ویرایش نمایه</a></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    function exitaccept()
+{
+  window.location.href="/driver/home/privacy";
+}
+</script>
+<script>
+  function b(phone)
+  {
+    
+        window.location.href="/driver/mapclient/mapclient?phone="+phone;
+    
+  }
+
+
+  
+</script>

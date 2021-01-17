@@ -16,6 +16,7 @@ namespace DataLayer.Context
     public  DbSet<Tbl_Travel> tbl_Travels{get; set;}
       public  DbSet<Tbl_driver> Tbl_driver{get; set;}
      public  DbSet<Tbl_pay> Tbl_pays{get; set;}
+      public  DbSet<Tbl_paydriver> Tbl_paydriver{get; set;}
 
  /////////////////////////////////////////////////////////////////////////////////////copy context
   public class ToDoContextFactory : IDesignTimeDbContextFactory<Contextdb>

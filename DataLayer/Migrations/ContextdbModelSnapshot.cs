@@ -161,9 +161,51 @@ namespace DataLayer.Migrations
                     b.Property<DateTime>("havesttime")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("idtravel")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("Tbl_pays");
+                });
+
+            modelBuilder.Entity("DataLayer.Entites.Tbl_paydriver", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Driverid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Harvest")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameFamily")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pay")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Paytime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Travelid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("havesttime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tbl_paydriver");
                 });
 #pragma warning restore 612, 618
         }

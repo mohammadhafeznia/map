@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace ViewModel
 {
@@ -15,6 +16,7 @@ namespace ViewModel
            public string type_car { get; set; }
            public string pelak { get; set; }
            public string profile_img { get; set; }
+           public IFormFile img { get; set; }
            public string Username { get; set; }
             public string Password { get; set; }
            

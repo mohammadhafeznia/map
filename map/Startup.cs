@@ -16,6 +16,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SignalRChat.Hubs;
+using map.Models;
 
 namespace map {
     public class Startup {
@@ -32,9 +33,24 @@ namespace map {
                 option.UseSqlServer (Configuration.GetConnectionString ("DefaultConnection"));
 
             });
+
+               services.AddDistributedMemoryCache();
+
+        services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromSeconds(100000000);
+            options.Cookie.HttpOnly = true;
+            options.Cookie.IsEssential = true;
+        });
+        services.AddHttpContextAccessor();
+
+       
             services.AddRazorPages ().AddRazorRuntimeCompilation ();
             services.AddControllersWithViews ();
-            /////////////auto
+           ///
+        
+           /// 
+           ///  /////////////auto
             services.AddAuthentication (options => {
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -45,6 +61,9 @@ namespace map {
                 options.ExpireTimeSpan = TimeSpan.FromMinutes (43200);
             });
             services.AddSignalR ();
+            
+           
+
 
         }
 
@@ -62,26 +81,29 @@ namespace map {
             app.UseRouting ();
             app.UseAuthentication ();
             app.UseAuthorization ();
+            app.UseSession();
             
             
 
-          
+            
+            
+
+               
 
             app.UseEndpoints (endpoints => {
+
+                endpoints.MapAreaControllerRoute (
+                    name: "Areas",
+                    areaName:"driver",
+                    pattern: "driver/{controller=Home}/{action=intro}/{id?}");
+
+
                 endpoints.MapControllerRoute (
                     name: "default",
                     pattern: "{controller=Home}/{action=intro}/{id?}");
                 endpoints.MapHub<ChatHub> ("/chathub");
             });
-            
-
-            app.UseEndpoints (endpoints => {
-                endpoints.MapControllerRoute (
-                    name: "areas",
-                    pattern: "{area=exists}/{controller=Home}/{action=intro}/{id?}");
-
-            });
-              
+                
 
         }
     }

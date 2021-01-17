@@ -17,7 +17,7 @@
   <!-- Title-->
   <title>تاکسی جو</title>
   <!-- Favicon-->
-  <link rel="icon" href="~/app/img/icons/icon-72x72.png">
+  <link rel="icon" href="/app/img/core-img/1.png>
   <!-- Apple Touch Icon-->
   <link rel="apple-touch-icon" href="~/app/img/icons/icon-96x96.png">
   <link rel="apple-touch-icon" sizes="152x152" href="~/app/img/icons/icon-152x152.png">
@@ -76,11 +76,32 @@
 
 </body>
 <script>
+ 
  function ca(phone)
   {
+     
+    if(phone==document.getElementById('userInput').value)
+    {
+       window.location.href="/mapclient/mapclient/0";
     
-        window.location.href="/mapclient/mapclient/0";
-    
+       
+    }
+  }
+
+
+</script>
+
+<script>
+    function sa(user,driverid)
+  {
+    debugger
+    if(document.getElementById('userInput').value == user)
+    {
+      
+      window.location.href="/mapaccept/mapAccept";
+    }
+   
+
   }
 </script>
 

@@ -1,9 +1,13 @@
+  @using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
   <div class="suha-sidenav-wrapper" id="sidenavWrapper">
     <!-- Sidenav Profile-->
     <div class="sidenav-profile">
-      @if (@Menu.photo != null)
+      @if (@HttpContextAccessor.HttpContext.Session.GetString("photo") != null)
       {
-       <div class="user-profile"><img src="~/fileupload/@Menu.photo" alt=""></div>
+        var b=@HttpContextAccessor.HttpContext.Session.GetString("photo");
+       <div class="user-profile"><img src="~/fileupload/@b" alt=""></div>
           
       }else
       {
@@ -11,15 +15,18 @@
       }
       
       <div class="user-info">
-        @if (@Menu.name != null)
+        @if (@HttpContextAccessor.HttpContext.Session.GetString("name") != null)
         {
-           <h6 class="user-name mb-0">@Menu.name</h6>
+           <h6 class="user-name mb-0">@HttpContextAccessor.HttpContext.Session.GetString("name")</h6>
         }else
         {
            <h6 class="user-name mb-0">نام شما</h6>
         }
        
-        <p class="available-balance">حساب شما <span><span class="counter">350000</span></span><span> تومان</span></p>
+
+       
+
+        <p class="available-balance mt-3">حساب شما <span><span class="counter">@HttpContextAccessor.HttpContext.Session.GetString("pay")</span></span><span> تومان</span></p>
       </div>
     </div>
     <!-- Sidenav Nav-->
@@ -31,7 +38,7 @@
             class="ml-3 badge badge-warning"></span></a></li>
                <li><a href="/pay/pay"><i class="lni lni-alarm lni-tada-effect"></i>   کیف پول  <span
             class="ml-3 badge badge-warning"></span></a></li>
-                   <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i> تخفیف ها <span
+                   <li><a href="#"><i class="lni lni-alarm lni-tada-effect"></i> تخفیف ها <span
             class="ml-3 badge badge-warning"></span></a></li>
                       <li><a href="/AboutUs/AboutUs"><i class="lni lni-alarm lni-tada-effect"></i>  پشتیبانی <span
             class="ml-3 badge badge-warning"></span></a></li>
@@ -53,7 +60,7 @@
         </ul>
       </li>
       <li><a href="settings.html"><i class="lni lni-cog"></i>تنظیمات</a></li> *@
-      <li><a href="intro.html"><i class="lni lni-power-switch"></i>خروج از سیستم</a></li>
+      <li><a href="/home/exit"><i class="lni lni-power-switch"></i>خروج از سیستم</a></li>
     </ul>
     <!-- Go Back Button-->
     <div class="go-home-btn" id="goHomeBtn"><i class="lni lni-arrow-right"></i></div>

@@ -15,6 +15,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 
 namespace map.Controllers
 {
@@ -39,6 +40,9 @@ namespace map.Controllers
 
         public IActionResult intro()
         {
+            // Menu.pay=Diposit();
+             HttpContext.Session.SetString ("pay", Diposit().ToString());
+             
 
             return View();
         }
@@ -56,6 +60,8 @@ namespace map.Controllers
         {
            
             return View();
+          
+            
         }
 
       public IActionResult otpconfig()
@@ -109,25 +115,26 @@ namespace map.Controllers
                 Tbl_User user = new Tbl_User()
                 {
                     phone = us.phone,
-                    token = "1234",
+                    token = number,
                     NameFamily="نام شما",
-                    Adress="آدرس شما "
+                    Adress="آدرس شما ",
+                    photo="9.jpg"
                 };
                 _db.tbl_Users.Add(user);
                 _db.SaveChanges();
 
-                // var api = new KavenegarApi("3871353043697339486A70384F544A4A574C74612B51432F4C7A4B305076645457396F5267456F7A5A34383D");
-                // api.VerifyLookup(us.phone, number, "taxijo");
+                var api = new KavenegarApi("3871353043697339486A70384F544A4A574C74612B51432F4C7A4B305076645457396F5267456F7A5A34383D");
+                api.VerifyLookup(us.phone, number, "taxijo");
                 return RedirectToAction("otpconfig");
 
             }else
             {
-                qcheck.token="1234";
+                qcheck.token=number;
                  _db.tbl_Users.Update(qcheck);
                 _db.SaveChanges();
 
-                // var api = new KavenegarApi("3871353043697339486A70384F544A4A574C74612B51432F4C7A4B305076645457396F5267456F7A5A34383D");
-                // api.VerifyLookup(us.phone, number, "taxijo");
+                var api = new KavenegarApi("3871353043697339486A70384F544A4A574C74612B51432F4C7A4B305076645457396F5267456F7A5A34383D");
+                 api.VerifyLookup(us.phone, number, "taxijo");
                 return RedirectToAction("otpconfig");
 
             }
@@ -147,5 +154,43 @@ namespace map.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        //
+        
+
+          public int Diposit()
+        {
+            var user=_db.Tbl_pays.Where(a=>a.Phone==User.Identity.GetId ()).ToList();
+
+            int pay=0;
+            int harvest=0;
+            foreach (var item in user)
+            {
+                if (item.Pay!=0 && item.status==true)
+                {
+                    pay=pay+item.Pay;
+                    
+                }
+
+                if (item.Harvest!=0)
+                {
+                    harvest=harvest+item.Harvest;
+                }
+             
+                
+            }
+            
+
+            int total=pay-harvest;
+            return total;
+        }
+        //exit
+        public IActionResult exit()
+        {
+         HttpContext.SignOutAsync (CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction ("intro", "home");
+            
+        }
+        
+        
     }
 }

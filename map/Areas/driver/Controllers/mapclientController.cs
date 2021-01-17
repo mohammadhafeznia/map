@@ -15,28 +15,26 @@ using Kavenegar;
 using ViewModel;
 using DataLayer.Entites;
 using map.Models;
+using driver.Controllers;
+using Microsoft.AspNetCore.Hosting;
+
 namespace map.driver.Controllers
 {
     [Area("driver")]
-    public class mapclientController : Controller
+    public class mapclientController : BaseController
     {
-        private readonly Contextdb _db;
-        public static string mobile;
-        public mapclientController(Contextdb db)
+        public mapclientController(Contextdb _db,IWebHostEnvironment env):base(_db,env)
         {
-            _db = db;
+           
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         
         public IActionResult mapclient(String Phone)
         {
-            var qtravel = _db.tbl_Travels.Where(a => a.UserPhone == Phone && a.TypePay == "search").FirstOrDefault();
-
+            
+            var qtravel = db.tbl_Travels.Where(a => a.UserPhone == Phone && a.TypePay == "search").FirstOrDefault();
+            info();
 
                  return View(qtravel);
 
@@ -59,18 +57,59 @@ namespace map.driver.Controllers
 
 
             };
-            _db.tbl_Travels.Add(tr);
-            _db.SaveChanges();
+            db.tbl_Travels.Add(tr);
+            db.SaveChanges();
 
             return RedirectToAction("load");
         }
         
         
- public IActionResult load()
- {
-     
-     return View();
- }
+
+ //
+    public IActionResult Travel () {
+            List<Vm_Travel> A=new List<Vm_Travel>();
+           var qlist=db.tbl_Travels.Where(a =>a.DriverId.ToString()==User.Identity.GetId()).OrderByDescending(a=>a.Id).ToList();
+         
+           foreach (var item in qlist)
+           {
+                Vm_Travel B=new Vm_Travel()
+           {
+               Id=item.Id,
+               UserPhone=item.UserPhone,
+                Origin =item.Origin,
+                Destination=item. Destination,
+                Distance =item.Distance,
+                Price=item.Price,
+                Time=item.Time,
+                DateDay =item.DateDay,
+                DriverId=item.DriverId,
+                TypePay=item.TypePay,
+                DateShamsi=item.DateDay.ToPersianDateString(),
+                
+                
+           };
+           A.Add(B);
+           
+
+           }
+          
+           ViewBag.List=A.OrderByDescending(a=>a.Id);
+           info();
+            return View ();
+        }
+        //
+        
+          public IActionResult TravelDetails (int id ) {
+             var qtravel = db.tbl_Travels.Where(a =>a.Id==id ).FirstOrDefault();
+             info();
+
+
+                 return View(qtravel);
+              
+          
+        }
+
+
  
 
 

@@ -15,6 +15,7 @@ using Kavenegar;
 using ViewModel;
 using DataLayer.Entites;
 using map.Models;
+using Microsoft.AspNetCore.Http;
 namespace map.Controllers
 {
     public class mapclientController : Controller
@@ -34,10 +35,19 @@ namespace map.Controllers
         
         public IActionResult mapclient(int? id)
         {
+            var b= HttpContext.Session.GetString ("pay");
             ///name.photo.credit
-             Menu.name=_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().NameFamily;
-             Menu.photo=_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().photo;
-             //
+             HttpContext.Session.SetString ("name", _db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().NameFamily);
+             HttpContext.Session.SetString ("photo",_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().photo);
+
+            //  Menu.name=_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().NameFamily;
+            //  Menu.photo=_db.tbl_Users.Where(a=>a.phone==User.Identity.GetId())?.SingleOrDefault().photo;
+            //
+
+           if (_db.tbl_Travels.Any(a => a.UserPhone == User.Identity.GetId() && a.TypePay == "پذیرش"))
+           {
+                return RedirectToAction("mapAccept", "mapAccept");
+           }
 
             if (id==0)
             {
@@ -51,6 +61,7 @@ namespace map.Controllers
                 }
             }
             
+
             return View();
         }
 

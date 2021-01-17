@@ -1,0 +1,432 @@
+@model DataLayer.Entites.Tbl_Travel
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.1.0/dist/geosearch.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+
+<style>
+    #map {
+        height: 700px;
+        width: 100%;
+    }
+
+    .leaflet-top {
+        display: none;
+    }
+
+
+    .mapbox {
+
+        background-color: #0d3bd16b;
+        width: 100%;
+        height: 58px;
+        position: fixed;
+        bottom: 30px;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .mapboxrefresh {
+
+
+
+        position: fixed;
+        top: 90px;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        right: 20px;
+    }
+</style>
+
+
+<div class="col-sm-12 col-12">
+    <div id="map">
+
+
+        
+
+<form action="/mapclient/AddTravel" method="POST">
+        <div id="msg" class="mapbox alert aler-info text-center  " style="height:Auto;">
+
+            @* مسافت *@
+            <p id="distancedemo" class="btn btn-primary" style="font-family: iransans;display: revert !important;">مسافت :@Model.Distance کیلومتر</p>
+             @* مبدا *@
+            <p id="Origindemo" class="d-none" style="font-family: iransans;display: revert !important;"></p>
+            <input type="text" class="d-none"  asp-for="Origin">
+            @* مقصد *@
+            <p id="destinationdemo" class="d-none" style="font-family: iransans;display: revert !important;"></p>
+            <input type="text" class="d-none"  asp-for="Destination">
+            @* زمان رسیدن *@
+            <p id="timedemo" class="btn btn-primary" style="font-family: iransans;display: revert !important;"> زمان رسیدن: @Model.Time دقیقه</p>
+           
+            
+            @* قیمت *@
+            <p id="pricedemo" class="btn btn-primary" style="font-family: iransans;display: revert !important;">هزینه سفر :</p>
+             <input type="text" class="d-none"  asp-for="Price">
+            <input type="text" id="phoneclient" value="@Model.UserPhone" style="display: none;">
+
+           <div class="row justify-content-center">
+               <audio id="my_audio" src="~/app/img/icons/ring.mp3" loop="loop" ></audio>
+
+                 <a href="/driver/mapclient/travel"  class="btn btn-warning mt-0  col-5 " style="font-family: iransans;display: revert !important;">بازگشت </a>
+               
+               
+           
+
+           </div>
+              
+        </div>
+
+        <div id="refresh" class="mapboxrefresh text-center "
+            style="background-color: #a9bdff6b;width:100px;display:none">
+            <a href="" style="font-family: iransans;" class="">
+                <img src="~/app/img/icons/refresh.png" alt=""> جستجوی مجدد
+            </a>
+
+
+        </div>
+</form>
+
+        <div id="mylocation" class="mapboxrefresh text-center " style="background-color: #a9bdff6b;width:100px;">
+            <a onclick="findlocation();" style="font-family: iransans;" class="">
+                <img src="~/app/img/icons/refresh.png" alt=""> یافتن موقعیت
+
+            </a>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
+<script>
+   
+</script>
+<script>
+    var t=1;
+  document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma( document.getElementById('Price').value) + "&nbsp;" + "تومان";
+    // Creating map options
+    var mapOptions = {
+        center: [38.2025589, 44.7686697],
+        zoom: 15
+    }
+
+    var mabda = L.icon({
+        iconUrl: '/app/img/icons/mabda.png',
+
+
+        iconSize: [75, 75], // size of the icon
+
+    });
+
+    var magsad = L.icon({
+
+        iconUrl: '/app/img/icons/magsad.png',
+
+
+        iconSize: [80, 80], // size of the icon
+
+    });
+    // Creating a map object
+    var map = new L.map('map', mapOptions);
+
+    // Creating a Layer object
+    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+
+    // Adding layer to the map
+    map.addLayer(layer);
+
+    // Creating a Marker
+    var markerOptionsmabda = {
+        title: "مبدا",
+        clickable: true,
+        draggable: false
+    }
+
+    var markerOptionsmagsad = {
+        title: "مقصد",
+        clickable: true,
+        draggable: false
+    }
+
+
+    var a, b;
+    // Creating a marker
+ 
+  var a=document.getElementById("Origin").value.replace("LatLng","").replace("(" ,"").replace(")","");
+  var b=document.getElementById("Destination").value.replace("LatLng","").replace("(" ,"").replace(")","");
+
+
+   var latlong =  a.split(',');
+  var latitude = parseFloat(latlong[0]);
+  var longitude = parseFloat(latlong[1]);
+
+   var latlong1 =  b.split(',');
+  var latitude1 = parseFloat(latlong1[0]);
+  var longitude1 = parseFloat(latlong1[1]);
+
+
+   L.Routing.control({
+    waypoints: [
+        L.latLng(latitude,longitude),
+        L.latLng(latitude1,longitude1)
+    ],
+    routeWhileDragging: true,
+    lineOptions: {
+                styles: [{ color: 'blue', opacity: 1, weight: 3 }]
+            }
+
+}).addTo(map);
+
+
+
+
+
+    var marker4 = L.marker(map.getCenter(), { icon: magsad }, markerOptionsmabda);;
+    var marker3 = L.marker(map.getCenter(), { icon: mabda }, markerOptionsmabda);
+
+    @* marker3.addTo(map); *@
+
+    marker3.on('click', function (e) {
+
+        var marker1;
+        marker1 = L.marker(map.getCenter(), { icon: mabda }, markerOptionsmabda);
+        a = marker1;
+        marker1.addTo(map);
+
+        map.removeLayer(marker3);
+        marker4.addTo(map);
+        document.getElementById('mabda').style.display = "none";
+        document.getElementById('magsad').style.display = "block";
+        document.getElementById('refresh').style.display = "block";
+        document.getElementById('mylocation').style.display = "none";
+        document.getElementById('Origin').value=a.getLatLng();
+
+    });
+    marker4.on('click', function (e) {
+
+        var marker2;
+        marker2 = L.marker(map.getCenter(), { icon: magsad }, markerOptionsmabda);
+        b = marker2;
+        marker2.addTo(map);
+        map.removeLayer(marker4);
+         document.getElementById('Destination').value=b.getLatLng();
+
+        Route();
+
+    });
+
+
+
+
+
+
+    function Route() {
+
+
+
+        var routeControl = L.Routing.control({
+            waypoints: [
+                L.latLng(a.getLatLng()),
+                L.latLng(b.getLatLng())
+            ],
+            createMarker: function () { return null; },
+
+            draggableWaypoints: false,
+
+            lineOptions: {
+                styles: [{ color: 'blue', opacity: 1, weight: 3 }]
+            }
+
+
+        }).addTo(map);
+
+        routeControl.on('routesfound', function (e) {
+            var routes = e.routes;
+            var summary = routes[0].summary;
+            document.getElementById('distancedemo').innerHTML = "مسافت :" + "&nbsp;" + (summary.totalDistance / 1000).toFixed(2) + "&nbsp;" + "کیلومتر";
+             document.getElementById('Distance').value= (summary.totalDistance / 1000).toFixed(2);
+            document.getElementById('timedemo').innerHTML = "زمان  :" + "&nbsp;" + (summary.totalTime / 60).toFixed(2) + "&nbsp;" + "دقیقه";
+            document.getElementById('Time').value=(summary.totalTime / 60).toFixed(2);
+            var km = (summary.totalDistance / 1000).toFixed(2);
+            if (km > 5) {
+                var b = (km - 5) * 1000;
+                var sum = 4000 + b;
+
+                document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma(sum) + "&nbsp;" + "تومان";
+                 document.getElementById('Price').value=sum;
+
+            } else {
+                document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma(4000) + "&nbsp;" + "تومان";
+                 document.getElementById('Price').value= 4000;
+
+
+            }
+
+            document.getElementById('magsad').style.display = "none";
+            document.getElementById('msg').style.display = "block";
+
+
+
+        });
+
+
+    }
+
+
+
+
+
+    map.on('move', function () {
+
+
+        marker3.setLatLng(map.getCenter());
+        marker4.setLatLng(map.getCenter());
+
+
+
+
+    });
+
+
+    marker.addEventListener("click", function (e) {
+        map.panTo(this.getLatLng());
+    });
+
+
+    function loc(marker) {
+        var data = {
+            lat: marker.latlng.lat,
+            lng: marker.latlng.lng
+        }
+        alert("hjgghjgh");
+    }
+
+
+    function autocomma(number_input) {
+        number_input += '';
+        number_input = number_input.replace(',', ''); number_input = number_input.replace(',', ''); number_input = number_input.replace(',', '');
+        number_input = number_input.replace(',', ''); number_input = number_input.replace(',', ''); number_input = number_input.replace(',', '');
+        x = number_input.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1))
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        return x1 + x2;
+    }
+
+</script>
+
+<script>
+
+    navigator.geolocation.getCurrentPosition(function (location) {
+        var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+
+        var mymap = L.map('mapid').setView(latlng, 13)
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
+        }).addTo(mymap);
+
+        marker3 = L.marker(latlng).addTo(mymap);
+    });
+
+
+    function findlocation() {
+
+        navigator.geolocation.getCurrentPosition(function (location) {
+            var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+
+            var mymap = L.map('mapid').setView(latlng, 13)
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox.streets',
+                accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
+            }).addTo(mymap);
+
+            marker3 = L.marker(latlng).addTo(mymap);
+        });
+    }
+
+
+
+
+
+
+ 
+
+function ca(phone)
+  {
+      
+          window.location.href="/driver/home/privacy";
+    
+         
+    
+  }
+
+
+</script>
+
+
+<div class="col-4 d-none"><input type="text" id="userInput" value="@Model.UserPhone" /></div>
+  <div class="col-4 d-none"><input type="text" id="messageInput" value="@User.Identity.GetId()" /></div>
+  <input type="button" id="sendButton" onclick="a();" value="Send Message" class="d-none" />
+  <script src="~/js/signalr/dist/browser/signalr.js"></script>
+  <script> src="~/js/chat.js"></script>
+  <script>
+       function sa(phone,driverid)
+  {
+      if(phone==document.getElementById('phoneclient').value && driverid==document.getElementById('messageInput').value )
+      {
+           @* Window.location.href="/driver/mapaccept/mapaccept?phone="+document.getElementById("UserPhone").value; *@
+           
+           
+              window.location.href="/driver/mapaccept/mapaccept?phone="+phone;
+           
+            
+      }else{
+           window.location.href="/driver/home/privacy";
+
+      }
+   
+       
+    
+  }
+
+  </script>
+ <script>
+    function exitaccept()
+{
+  window.location.href="/driver/home/privacy";
+}
+</script>
+
+<script>
+     function b(phone)
+  {
+    
+        window.location.href="/driver/mapclient/mapclient?phone="+phone;
+    
+  }
+
+</script>

@@ -14,20 +14,23 @@ using Microsoft.Extensions.Logging;
 using ViewModel;
 using DataLayer.Context;
 using DataLayer.Entites;
+using Microsoft.AspNetCore.Hosting;
+using driver.Controllers;
+
 namespace map.driver.Controllers {
     [Area ("driver")]
-    public class TravelDriverController : Controller {
-        private readonly Contextdb _db;
-        public static string mobile;
-        public TravelDriverController (Contextdb db) {
-            _db = db;
-        }
+    public class TravelDriverController : BaseController {
+       
+        public TravelDriverController (Contextdb _db,IWebHostEnvironment env):base(_db,env)
+         {
+         }
 
         public IActionResult TravelDriver () {
-           var qlist=_db.tbl_Travels.OrderByDescending(a=>a.Id).ToList();
+           var qlist=db.tbl_Travels.OrderByDescending(a=>a.Id).ToList();
            ViewBag.List=qlist;
             return View ();
         }
+        
           public IActionResult TravelDetails () {
             return View ();
         }

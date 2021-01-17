@@ -11,18 +11,18 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Hosting;
+using driver.Controllers;
 
 namespace map.driver.Controllers {
 
-    [Area ("driver")]
+   
 
-    public class LoginController : Controller {
-        private readonly Contextdb _db;
-        public static string mobile;
-         public static string msg;
-        public LoginController (Contextdb db) {
-            _db = db;
-        }
+    public class LoginController : BaseController {
+       
+        public LoginController (Contextdb _db,IWebHostEnvironment env):base(_db,env)
+        {}
+           
+       
 
         public IActionResult Index () {
 
@@ -37,7 +37,7 @@ namespace map.driver.Controllers {
 
         public IActionResult CheckLogin (Vm_driver user)
          {
-            var qdriver=_db.Tbl_driver.Where(a => a.Username ==user.Username && a.Password== user.Password).SingleOrDefault();
+            var qdriver=db.Tbl_driver.Where(a => a.Username ==user.Username && a.Password== user.Password).SingleOrDefault();
              
              if (qdriver!=null)
              {

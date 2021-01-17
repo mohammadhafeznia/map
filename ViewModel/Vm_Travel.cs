@@ -16,5 +16,8 @@ namespace ViewModel
         public DateTime DateDay { get; set; }
         public int DriverId { get; set; }
         public string TypePay { get; set; }
+        public string DateShamsi { get; set; }
+        
+        
     }
 }

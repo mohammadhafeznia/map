@@ -12,6 +12,12 @@ namespace ViewModel
         public string Destination  { get; set; }
          public string photo { get; set; }
          public string Price { get; set; }
+         public string Typecar { get; set; }
+         public string pelak { get; set; }
+         
+         
+         
+         
          
          
            

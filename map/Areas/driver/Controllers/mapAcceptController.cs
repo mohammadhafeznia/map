@@ -16,32 +16,31 @@ using Kavenegar;
 using ViewModel;
 using DataLayer.Entites;
 using map.Models;
+using driver.Controllers;
+using Microsoft.AspNetCore.Hosting;
+
 namespace map.driver.Controllers
 {
-    [Area("driver")]
-    public class mapAcceptController : Controller
+   
+    public class mapAcceptController : BaseController
     {
-        private readonly Contextdb _db;
-        public static string mobile;
-        public mapAcceptController(Contextdb db)
+        public mapAcceptController(Contextdb _db,IWebHostEnvironment env):base(_db,env)
         {
-            _db = db;
+           
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+    
         
         public IActionResult mapAccept(String Phone)
         {
-            var qtravel = _db.tbl_Travels.Where(a => a.UserPhone == Phone && a.TypePay == "search").FirstOrDefault();
+            if (db.tbl_Travels.Any(a => a.UserPhone == Phone && a.TypePay == "search"))
+            {
+                var qtravel = db.tbl_Travels.Where(a => a.UserPhone == Phone && a.TypePay == "search").FirstOrDefault();
             qtravel.TypePay="پذیرش" ;
             qtravel.DriverId=Convert.ToInt32(User.Identity.GetId());
-            _db.tbl_Travels.Update(qtravel);
-            _db.SaveChanges();
-            var user=_db.tbl_Users.Where(a =>a.phone==Phone).SingleOrDefault();///
+            db.tbl_Travels.Update(qtravel);
+            db.SaveChanges();
+            var user=db.tbl_Users.Where(a =>a.phone==Phone).SingleOrDefault();///
             if (user != null)
             {
                  Vm_passenger pass=new Vm_passenger()
@@ -59,13 +58,38 @@ namespace map.driver.Controllers
 
 
               
-            }/////UserIdentity
-           
+            }//
+            }
+            ///UserIdentity
+           if (db.tbl_Travels.Any(a => a.DriverId.ToString() == User.Identity.GetId() && a.TypePay == "پذیرش"))
+            {
+              var qtravel = db.tbl_Travels.Where(a => a.DriverId.ToString() == User.Identity.GetId() && a.TypePay == "پذیرش").FirstOrDefault();
+             var user=db.tbl_Users.Where(a =>a.phone==qtravel.UserPhone).SingleOrDefault();///
+            if (user != null)
+            {
+                 Vm_passenger pass=new Vm_passenger()
+            {
+                NameFamily=user.NameFamily,
+                phone=user.phone,
+                Origin=qtravel.Origin,
+                Destination=qtravel.Destination,
+                photo=user.photo,
+                Price=qtravel.Price,
+
+
+            };
+                             return View(pass);
+
+
+              
+            }//
+            }
                    
+                  
 
+                 
 
-
-                 return View();
+                 return RedirectToAction("mapclient","mapclient");
 
 
         }
@@ -86,19 +110,15 @@ namespace map.driver.Controllers
 
 
             };
-            _db.tbl_Travels.Add(tr);
-            _db.SaveChanges();
+            db.tbl_Travels.Add(tr);
+            db.SaveChanges();
+            info();
 
             return RedirectToAction("load");
         }
         
         
- public IActionResult load()
- {
-     
-     return View();
- }
- 
+
 
 
            }

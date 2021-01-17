@@ -1,0 +1,471 @@
+
+@model ViewModel.Vm_passenger
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.1.0/dist/geosearch.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+
+<style>
+    #map {
+        height: 700px;
+        width: 100%;
+    }
+
+    .leaflet-top {
+        display: none;
+    }
+
+
+    .mapbox {
+
+        background-color: #0d3bd16b;
+        @* width: 100%; *@
+        height: 58px;
+        position: fixed;
+        bottom: 30px;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .mapboxrefresh {
+
+
+
+        position: fixed;
+        top: 90px;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        right: 20px;
+    }
+    p{
+        width: 100%;
+    }
+</style>
+
+
+<div class="col-sm-12 col-12">
+    <div id="map">
+
+
+          @using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+<input type="text" id="phoneme" value="@User.Identity.GetId()">
+<form action="/mapclient/AddTravel" method="POST">
+
+        <div id="msg" class="mapbox alert aler-info text-center row " style="height:Auto;">
+             <div class="col-12 " >
+                 
+                @{
+               
+                  var b=@HttpContextAccessor.HttpContext.Session.GetString("pay");
+                 <input type="text" value="@b" id="etebar" style="display: none;">
+                  <p id="showetebar" class="alert alert-warning " style="font-family: iransans; color:black;font-size: 14px;font-weight: bold;">هزینه سفر :</p>
+                 }
+             </div>
+
+           <div class="col-6">
+               @if (@Model.photo != null)
+               {
+                   <img src="~/fileupload/@Model.photo" style="width: 75px;border-radius: 50%;" alt="">
+               }else
+               {
+                   <img src="~/app/img/bg-img/9.jpg" style="width: 75px;border-radius: 50%;" alt="">
+               }
+              
+             
+       </div>
+         <div class="col-6">
+               @* قیمت *@
+            <p id="pricedemo" class="btn btn-primary mt-3" style="font-family: iransans;">هزینه سفر :</p>
+             <input type="text" class="d-none"  asp-for="Price">
+
+         </div>
+               
+           
+          
+            @* مسافت *@
+            <div class="col-6">
+                            <p id="distancedemo" class="btn btn-primary" style="font-family: iransans;">راننده:  @Model.NameFamily </p>
+            </div>
+             <div class="col-6">
+               
+             <p id="timedemo" class="btn btn-primary" style="font-family: iransans;"> @Model.phone</p>
+             </div>
+
+            <div class="col-6">
+                 <p id="timedemo" class="btn btn-primary" style="font-family: iransans;">پلاک: @Model.pelak</p>
+            </div>
+
+            <div class="col-6">
+                  <p id="timedemo" class="btn btn-primary" style="font-family: iransans;"> نوع خودرو :@Model.Typecar</p>
+            </div>
+               
+
+             @* مبدا *@
+            <p id="Origindemo" class="d-none" style="font-family: iransans;"></p>
+            <input type="text" class="d-none"  asp-for="Origin">
+            @* مقصد *@
+            <p id="destinationdemo" class="d-none" style="font-family: iransans;"></p>
+            <input type="text" class="d-none"  asp-for="Destination">
+            @* زمان رسیدن *@
+           
+             <div class="col-6">
+                 @if (ViewBag.pay==1)
+                 {
+                                     <a  class="btn btn-light" style="width: 100%;color:black;font-family: iransans">هزینه پرداخت شده</a>
+
+                 }
+                 else
+                 {
+                                     <a href="/pay/paytravel" class="btn btn-success" style="width: 100%;color:black;font-family: iransans">پرداخت هزینه سفر</a>
+
+
+                 }
+            </div>
+             <div class="col-6">
+                <a href="" class="btn btn-light" style="width: 100%;color:black;font-family: iransans">تماس با راننده</a>
+            </div>
+            
+          
+           
+           
+              
+        </div>
+
+        <div id="refresh" class="mapboxrefresh text-center "
+            style="background-color: #a9bdff6b;width:100px;display:none">
+            <a href="" style="font-family: iransans;" class="">
+                <img src="~/app/img/icons/refresh.png" alt=""> جستجوی مجدد
+            </a>
+            
+
+        </div>
+</form>
+
+        <div id="mylocation" class="mapboxrefresh text-center " style="background-color: #a9bdff6b;width:100px;">
+            <a onclick="findlocation();" style="font-family: iransans;" class="">
+                <img src="~/app/img/icons/refresh.png" alt=""> یافتن موقعیت
+
+            </a>
+
+    
+        </div>
+  
+<div id="msgnot" class="alert alert-success alert-dismissible" style="position: fixed; z-index: 1000;width: 100%;font-family: iransans;text-align: center;font-size: 15px;color:black;display:none">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>پیام جدید</strong> راننده شما رسید 
+</div>
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    
+   document.getElementById('showetebar').innerHTML = "اعتبار کیف پول شما  :" + "&nbsp;" + autocomma( document.getElementById('etebar').value) + "&nbsp;" + "تومان";
+  document.getElementById('pricedemo').innerHTML = "هزینه   :" + "&nbsp;" + autocomma( document.getElementById('Price').value) + "&nbsp;" + "تومان";
+    // Creating map options
+    var mapOptions = {
+        center: [38.2025589, 44.7686697],
+        zoom: 13
+    }
+
+    var mabda = L.icon({
+        iconUrl: '/app/img/icons/mabda.png',
+
+
+        iconSize: [75, 75], // size of the icon
+
+    });
+
+    var magsad = L.icon({
+
+        iconUrl: '/app/img/icons/magsad.png',
+
+
+        iconSize: [80, 80], // size of the icon
+
+    });
+    // Creating a map object
+    var map = new L.map('map', mapOptions);
+
+    // Creating a Layer object
+    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+
+    // Adding layer to the map
+    map.addLayer(layer);
+
+    // Creating a Marker
+    var markerOptionsmabda = {
+        title: "مبدا",
+        clickable: true,
+        draggable: false
+    }
+
+    var markerOptionsmagsad = {
+        title: "مقصد",
+        clickable: true,
+        draggable: false
+    }
+
+
+    var a, b;
+    // Creating a marker
+ 
+  var a=document.getElementById("Origin").value.replace("LatLng","").replace("(" ,"").replace(")","");
+  var b=document.getElementById("Destination").value.replace("LatLng","").replace("(" ,"").replace(")","");
+
+
+   var latlong =  a.split(',');
+  var latitude = parseFloat(latlong[0]);
+  var longitude = parseFloat(latlong[1]);
+
+   var latlong1 =  b.split(',');
+  var latitude1 = parseFloat(latlong1[0]);
+  var longitude1 = parseFloat(latlong1[1]);
+
+
+   L.Routing.control({
+    waypoints: [
+        L.latLng(latitude,longitude),
+        L.latLng(latitude1,longitude1)
+    ],
+    routeWhileDragging: true,
+    lineOptions: {
+                styles: [{ color: 'blue', opacity: 1, weight: 3 }]
+            }
+
+}).addTo(map);
+
+
+
+
+
+    var marker4 = L.marker(map.getCenter(), { icon: magsad }, markerOptionsmabda);;
+    var marker3 = L.marker(map.getCenter(), { icon: mabda }, markerOptionsmabda);
+
+    @* marker3.addTo(map); *@
+
+    marker3.on('click', function (e) {
+
+        var marker1;
+        marker1 = L.marker(map.getCenter(), { icon: mabda }, markerOptionsmabda);
+        a = marker1;
+        marker1.addTo(map);
+
+        map.removeLayer(marker3);
+        marker4.addTo(map);
+        document.getElementById('mabda').style.display = "none";
+        document.getElementById('magsad').style.display = "block";
+        document.getElementById('refresh').style.display = "block";
+        document.getElementById('mylocation').style.display = "none";
+        document.getElementById('Origin').value=a.getLatLng();
+
+    });
+    marker4.on('click', function (e) {
+
+        var marker2;
+        marker2 = L.marker(map.getCenter(), { icon: magsad }, markerOptionsmabda);
+        b = marker2;
+        marker2.addTo(map);
+        map.removeLayer(marker4);
+         document.getElementById('Destination').value=b.getLatLng();
+
+        Route();
+
+    });
+
+
+
+
+
+
+    function Route() {
+
+
+
+        var routeControl = L.Routing.control({
+            waypoints: [
+                L.latLng(a.getLatLng()),
+                L.latLng(b.getLatLng())
+            ],
+            createMarker: function () { return null; },
+
+            draggableWaypoints: false,
+
+            lineOptions: {
+                styles: [{ color: 'blue', opacity: 1, weight: 3 }]
+            }
+
+
+        }).addTo(map);
+
+        routeControl.on('routesfound', function (e) {
+            var routes = e.routes;
+            var summary = routes[0].summary;
+            document.getElementById('distancedemo').innerHTML = "مسافت :" + "&nbsp;" + (summary.totalDistance / 1000).toFixed(2) + "&nbsp;" + "کیلومتر";
+             document.getElementById('Distance').value= (summary.totalDistance / 1000).toFixed(2);
+            document.getElementById('timedemo').innerHTML = "زمان  :" + "&nbsp;" + (summary.totalTime / 60).toFixed(2) + "&nbsp;" + "دقیقه";
+            document.getElementById('Time').value=(summary.totalTime / 60).toFixed(2);
+            var km = (summary.totalDistance / 1000).toFixed(2);
+            if (km > 5) {
+                var b = (km - 5) * 1000;
+                var sum = 4000 + b;
+
+                document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma(sum) + "&nbsp;" + "تومان";
+                 document.getElementById('Price').value=sum;
+
+            } else {
+                document.getElementById('pricedemo').innerHTML = "قیمت  :" + "&nbsp;" + autocomma(4000) + "&nbsp;" + "تومان";
+                 document.getElementById('Price').value= 4000;
+
+
+            }
+
+            document.getElementById('magsad').style.display = "none";
+            document.getElementById('msg').style.display = "block";
+
+
+
+        });
+
+
+    }
+
+
+
+
+
+    map.on('move', function () {
+
+
+        marker3.setLatLng(map.getCenter());
+        marker4.setLatLng(map.getCenter());
+
+
+
+
+    });
+
+
+    marker.addEventListener("click", function (e) {
+        map.panTo(this.getLatLng());
+    });
+
+
+    function loc(marker) {
+        var data = {
+            lat: marker.latlng.lat,
+            lng: marker.latlng.lng
+        }
+        alert("hjgghjgh");
+    }
+
+
+    function autocomma(number_input) {
+        number_input += '';
+        number_input = number_input.replace(',', ''); number_input = number_input.replace(',', ''); number_input = number_input.replace(',', '');
+        number_input = number_input.replace(',', ''); number_input = number_input.replace(',', ''); number_input = number_input.replace(',', '');
+        x = number_input.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1))
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        return x1 + x2;
+    }
+
+</script>
+
+<script>
+
+    navigator.geolocation.getCurrentPosition(function (location) {
+        var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+
+        var mymap = L.map('mapid').setView(latlng, 13)
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
+        }).addTo(mymap);
+
+        marker3 = L.marker(latlng).addTo(mymap);
+    });
+
+
+    function findlocation() {
+
+        navigator.geolocation.getCurrentPosition(function (location) {
+            var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+
+            var mymap = L.map('mapid').setView(latlng, 13)
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox.streets',
+                accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
+            }).addTo(mymap);
+
+            marker3 = L.marker(latlng).addTo(mymap);
+        });
+    }
+
+
+
+​
+</script>
+<audio id="my_audio" src="~/app/img/icons/sms.mp3"  ></audio>
+<script>
+    
+    function  sendnotification(phone,id)
+    { 
+        if(phone==document.getElementById('phoneme').value)
+        {
+              document.getElementById("my_audio").play();
+              document.getElementById('msgnot').style.display="block";
+
+        }
+      
+    }
+
+
+     function  sendendtravel(phone,id)
+    { 
+        if(phone==document.getElementById('phoneme').value)
+        {
+             location.href="/pay/pay"
+
+        }
+      
+    }
+
+    
+
+</script>
+
+  <div class="col-4 d-none"><input type="text" id="userInput" value="1" /></div>
+  <div class="col-4 d-none"><input type="text" id="messageInput" /></div>
+  <input type="button" id="sendButton" onclick="a();" value="Send Message" class="d-none" />
+  <script src="~/js/signalr/dist/browser/signalr.js"></script>
+  <script src="~/js/chat.js">
+  </script>
+  <script>
+
+  </script>
+
+  

@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using ViewModel;
 using DataLayer.Context;
 using DataLayer.Entites;
+using map.Models;
 namespace map.Controllers {
 
     public class TravelClientController : Controller {
@@ -24,12 +25,42 @@ namespace map.Controllers {
         }
 
         public IActionResult TravelClient () {
-           var qlist=_db.tbl_Travels.OrderByDescending(a=>a.Id).ToList();
-           ViewBag.List=qlist;
+            List<Vm_Travel> A=new List<Vm_Travel>();
+           var qlist=_db.tbl_Travels.Where(a =>a.UserPhone==User.Identity.GetId()).OrderByDescending(a=>a.Id).ToList();
+         
+           foreach (var item in qlist)
+           {
+                Vm_Travel B=new Vm_Travel()
+           {
+               Id=item.Id,
+               UserPhone=item.UserPhone,
+                Origin =item.Origin,
+                Destination=item. Destination,
+                Distance =item.Distance,
+                Price=item.Price,
+                Time=item.Time,
+                DateDay =item.DateDay,
+                DriverId=item.DriverId,
+                TypePay=item.TypePay,
+                DateShamsi=item.DateDay.ToPersianDateString(),
+                
+                
+           };
+           A.Add(B);
+           
+
+           }
+          
+           ViewBag.List=A.OrderByDescending(a=>a.Id);
             return View ();
         }
-          public IActionResult TravelDetails () {
-            return View ();
+          public IActionResult TravelDetails (int id ) {
+             var qtravel = _db.tbl_Travels.Where(a =>a.Id==id ).FirstOrDefault();
+
+
+                 return View(qtravel);
+              
+          
         }
 
     }

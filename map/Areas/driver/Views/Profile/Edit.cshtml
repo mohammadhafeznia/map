@@ -1,0 +1,118 @@
+<!-- Header Area-->
+@model ViewModel.Vm_driver;
+<form action="/driver/Profile/edit" method="POST" enctype="multipart/form-data">
+  <div class="header-area" id="headerArea">
+    <div class="container h-100 d-flex align-items-center justify-content-between">
+      <!-- Back Button-->
+      <div class="back-button"><a href="profile.html"><i class="lni lni-arrow-right"></i></a></div>
+      <!-- Page Title-->
+      <div class="page-heading">
+        <h6 class="mb-0">ویرایش نمایه</h6>
+      </div>
+      <!-- Navbar Toggler-->
+      <div class="suha-navbar-toggler d-flex justify-content-between flex-wrap" id="suhaNavbarToggler">
+        <span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <!-- Sidenav Black Overlay-->
+  <div class="sidenav-black-overlay"></div>
+  <!-- Side Nav Wrapper-->
+
+  <div class="page-content-wrapper">
+    <div class="container">
+      <!-- Profile Wrapper-->
+      <div class="profile-wrapper-area py-3">
+
+        <!-- User Information-->
+        <div class="card user-info-card">
+          <div class="card-body p-4 d-flex align-items-center">
+            <div class="user-profile mr-3">
+              @if (@Model.profile_img != null)
+              {
+                <img src="~/fileupload/@Model.profile_img" style="width: 200px; border-radius: 50%;" alt=""
+                  id="output_image">
+              }
+              else
+              {
+                <img src="~/app/img/bg-img/9.jpg" style="width: 200px; border-radius: 50%;" alt=""
+                  id="output_image">
+              }
+
+              <div class="change-user-thumb">
+
+                <input class="form-control-file" type="file" asp-for="img" onchange="preview_image(event);">
+                <button><i class="lni lni-pencil"></i></button>
+
+              </div>
+            </div>
+            <div class="user-info">
+              <p class="mb-0 text-white">تاکسی جو </p>
+
+            </div>
+          </div>
+        </div>
+        <!-- User Meta Data-->
+        <div class="card user-data-card">
+          <div class="card-body">
+
+            <div class="mb-3">
+              @* <div class="title mb-2"><i class="lni lni-user"></i><span>نام کاربری</span></div>
+                <input class="form-control" type="text" value="نام کاربری">
+                </div> *@
+              <div class="mb-3">
+                <div class="title mb-2"><i class="lni lni-user"></i><span>نام و نام خانوادگی</span></div>
+                <input class="form-control" type="text" asp-for="NameFamily">
+              </div>
+              <div class="mb-3">
+                <div class="title mb-2"><i class="lni lni-phone"></i><span>تلفن</span></div>
+                <input class="form-control" type="text" asp-for="@Model.phone" disabled>
+              </div>
+              <div class="mb-3">
+                @* <div class="title mb-2"><i class="lni lni-envelope"></i><span>آدرس ایمیل</span></div>
+                  <input class="form-control" type="email" value="care@example.com">
+                  </div> *@
+                <div class="mb-3">
+                  <div class="title mb-2"><i class="lni lni-map-marker"></i><span>آدرس حمل و نقل</span></div>
+                  <input class="form-control" type="text" asp-for="Adress">
+                </div>
+                <button class="btn btn-success w-100" type="submit">ذخیره همه تغییرات</button>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+</form>
+
+<script>
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output_image');
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+
+  }
+
+
+</script>
+<script>
+    function exitaccept()
+{
+  window.location.href="/driver/home/privacy";
+}
+</script>
+<script>
+  function b(phone)
+  {
+    
+        window.location.href="/driver/mapclient/mapclient?phone="+phone;
+    
+  }
+
+
+  
+</script>

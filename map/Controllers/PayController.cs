@@ -1,4 +1,8 @@
-﻿using System;
+﻿using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Dynamic;
+using System.Data.Common;
+using System;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -10,8 +14,9 @@ using Microsoft.VisualBasic;
 using ZarinPal.Class;
 using DataLayer.Entites;
 using DataLayer.Context;
+using Microsoft.AspNetCore.Http;
 
-namespace faraboom.Controllers {
+namespace map.Controllers {
 
     public class PayController : Controller {
         private readonly Payment _payment;
@@ -55,7 +60,7 @@ namespace faraboom.Controllers {
            sumshop=qpay.Pay;
             var result = await _payment.Request (new DtoRequest () {
                     Mobile = quser.phone,
-                    CallbackUrl = "https://localhost:5001/pay/validate",
+                    CallbackUrl = "https://taxijo.com/pay/validate",
                     Description = quser.NameFamily,
                     Email ="tak1.ghasemi@gmail.com",
                     Amount =qpay.Pay,
@@ -77,14 +82,28 @@ namespace faraboom.Controllers {
 
             if (verification.Status == 100) {
 
+                
 
-                return RedirectToAction ("pay","pay",new{id=1});
+            var q=db.Tbl_pays.OrderByDescending(a=>a.Id).Take(1).SingleOrDefault();
+           q.status=true; 
+           db.Tbl_pays.Update(q);
+           db.SaveChanges();
+           msg="پرداخت با موفقیت انجام شد";
+
+
+                return RedirectToAction ("pay","pay");
+
             } else
 
             {
+                 var q=db.Tbl_pays.OrderByDescending(a=>a.Id).Take(1).SingleOrDefault();
+               q.status=false; 
+                db.Tbl_pays.Update(q);
+           db.SaveChanges();
+           msg="پرداخت نا موفق بوده است ";
+     
 
-
-                 return RedirectToAction ("pay","pay",new{id=0});
+                 return RedirectToAction ("pay","pay");
 
             }
 
@@ -92,19 +111,99 @@ namespace faraboom.Controllers {
 
 
 
-        public IActionResult pay(int? id)
+        public IActionResult pay()
         {
-          if (id==0)
+          if ( msg !=null)
           {
-              ViewBag.msg="پرداخت ناموفق بود ";
-          }
-          else
-          {
-              ViewBag.msg="پرداخت موفق بود ";
+            
+              ViewBag.msg=msg;
+               msg=null;
           }
 
+           HttpContext.Session.SetString ("pay", Diposit().ToString());
+        
           return View();
         }
-    }
+
+
+
+         public int Diposit()
+        {
+            var user=db.Tbl_pays.Where(a=>a.Phone==User.Identity.GetId ()).ToList();
+
+            int pay=0;
+            int harvest=0;
+            foreach (var item in user)
+            {
+                if (item.Pay!=0 && item.status==true)
+                {
+                    pay=pay+item.Pay;
+                    
+                }
+
+                if (item.Harvest!=0)
+                {
+                    harvest=harvest+item.Harvest;
+                }
+             
+                
+            }
+            
+
+            int total=pay-harvest;
+            return total;
+        }
+
+
+        public IActionResult paytravel()
+        {
+            var qtravel=db.tbl_Travels.Where(a => a.UserPhone == User.Identity.GetId() && a.TypePay == "پذیرش").SingleOrDefault();
+           if (qtravel != null)
+           {
+                if ( Convert.ToInt32(HttpContext.Session.GetString ("pay"))  >= Convert.ToInt32(qtravel.Price)  )
+            {
+                 Tbl_pay A=new Tbl_pay()
+            {
+               Phone=User.Identity.GetId(),
+               Harvest=Convert.ToInt32(qtravel.Price),
+               havesttime=DateTime.UtcNow,
+               idtravel=qtravel.Id
+
+            };
+            db.Tbl_pays.Add(A);
+             db.SaveChanges();
+
+                    var quser = db.tbl_Users.Where(a => a.phone == qtravel.UserPhone)?.SingleOrDefault();
+              Tbl_paydriver B=new Tbl_paydriver()
+            {
+               Driverid=qtravel.DriverId.ToString(),
+               Pay=Convert.ToInt32(qtravel.Price),
+               Paytime=DateTime.UtcNow,
+                Travelid = qtravel.Id.ToString(),
+               NameFamily=quser.NameFamily
+                         
+               
+
+            };
+            db.Tbl_paydriver.Add(B);
+             db.SaveChanges();
+               HttpContext.Session.SetString ("pay", Diposit().ToString());
+
+             return RedirectToAction ("mapaccept","mapaccept");
+
+              }
+              else
+              {
+                  msg="اعتبار شما کافی نیست لطفا کیف پول خو را شارژ کنید";
+                  return RedirectToAction ("pay");
+
+
+              }
+           }
+           
+           return RedirectToAction ("mapaccept","mapaccept");
+        }
+        
+   }
 }
 

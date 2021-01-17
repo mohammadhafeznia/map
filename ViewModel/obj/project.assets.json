@@ -5890,31 +5890,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\123\\.nuget\\packages\\": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\MEDIA MARK\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\123\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\my pc\\.nuget\\packages\\": {}
->>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
->>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
->>>>>>> 988705fe136624950bd9294ea86932d07aa7ec91
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      "projectUniqueName": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj",
-=======
-<<<<<<< HEAD
->>>>>>> 988705fe136624950bd9294ea86932d07aa7ec91
       "projectUniqueName": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj",
       "projectName": "ViewModel",
       "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\ViewModel.csproj",
@@ -5923,27 +5903,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config"
-<<<<<<< HEAD
-=======
-=======
-      "projectUniqueName": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\ViewModel\\ViewModel.csproj",
->>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
-      "projectName": "ViewModel",
-      "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\ViewModel.csproj",
-      "packagesPath": "C:\\Users\\MEDIA MARK\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\ViewModel\\obj\\",
-      "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
-      "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\MEDIA MARK\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-        "C:\\Users\\my pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
->>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
->>>>>>> 988705fe136624950bd9294ea86932d07aa7ec91
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5954,23 +5913,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-<<<<<<< HEAD
             "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj": {
               "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj"
-=======
-<<<<<<< HEAD
-            "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "c:\\Users\\MEDIA MARK\\Desktop\\taxi64bit\\map\\DataLayer\\DataLayer.csproj"
-=======
-<<<<<<< HEAD
-            "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "c:\\Users\\123\\Desktop\\taxiclon\\map\\DataLayer\\DataLayer.csproj"
-=======
-            "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "c:\\Users\\my pc\\Desktop\\taxinew\\map\\DataLayer\\DataLayer.csproj"
->>>>>>> 2c6d33491aca821bf13077959b0acd64b5420cda
->>>>>>> fd5506c268d6bd39c0a3f2bb5792621a2915b853
->>>>>>> 988705fe136624950bd9294ea86932d07aa7ec91
             }
           }
         }
@@ -6007,13 +5951,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file c:\\Users\\123\\Desktop\\taxiclon\\map\\ViewModel\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

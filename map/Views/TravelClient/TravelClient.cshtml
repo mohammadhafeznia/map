@@ -28,7 +28,7 @@
         
 
                 <div class="accordian-area-wrapper mt-3">
-                    <a href="/driver/TravelClient/TravelDetails">
+                    <a href="/TravelClient/TravelDetails/@item.Id">
                         <!-- Accordian Card-->
                         <div class="card accordian-card clearfix">
                             <div class="card-body">
@@ -41,7 +41,7 @@
                                             aria-expanded="false" aria-controls="collapseOne"><span><i
                                                     class="lni lni-alarm"></i> راننده در دسترس نبود </span>
                                             <p style="font-family: iransans; margin-top: 18px;">
-                                                99/10/10
+                                              @item.DateShamsi
                                             </p>
                                             <i class="lni lni-chevron-left"> </i>
                                         </button>
@@ -57,7 +57,7 @@
     {
       
                 <div class="accordian-area-wrapper mt-3">
-                    <a href="/driver/TravelClient/TravelDetails">
+                    <a href="/TravelClient/TravelDetails/@item.Id">
                         <!-- Accordian Card-->
                         <div class="card accordian-card seller-card clearfix">
                             <div class="card-body">
@@ -70,7 +70,7 @@
                                             aria-expanded="false" aria-controls="collapseThree"><span>
                                                 <i class="lni lni-alarm"></i>سفر لغو شده</span>
                                             <p style="font-family: iransans; margin-top: 18px;">
-                                                99/10/10
+                                               @item.DateShamsi
                                             </p>
                                             <i class="lni lni-chevron-left"> </i>
                                         </button>
@@ -82,11 +82,12 @@
                 </div>
 
 }
-if (item.TypePay=="سفر انجام شده")
+if (item.TypePay=="اتمام سفر")
     {
+        
       
                 <div class="accordian-area-wrapper mt-3">
-                    <a href="/driver/TravelClient/TravelDetails">
+                    <a href="/TravelClient/TravelDetails/@item.Id">
 
                         <!-- Accordian Card-->
                         <div class="card accordian-card others-card clearfix">
@@ -100,7 +101,7 @@ if (item.TypePay=="سفر انجام شده")
                                             aria-expanded="false" aria-controls="collapseFive"><span><i
                                                     class="lni lni-alarm"></i> سفر انجام شده </span>
                                             <p style="font-family: iransans; margin-top: 18px;">
-                                                99/10/10
+                                                 @item.DateShamsi
                                             </p>
                                             <i class="lni lni-chevron-left">
 

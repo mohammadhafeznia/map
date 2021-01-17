@@ -22,3 +22,15 @@ c:\Users\123\Desktop\taxiclon\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.cs
 c:\Users\123\Desktop\taxiclon\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
 c:\Users\123\Desktop\taxiclon\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
 c:\Users\123\Desktop\taxiclon\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache
+D:\project\map\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
+D:\project\map\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.json
+D:\project\map\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.dev.json
+D:\project\map\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+D:\project\map\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+D:\project\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csprojAssemblyReference.cache
+D:\project\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+D:\project\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+D:\project\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+D:\project\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
+D:\project\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
+D:\project\map\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache
